@@ -17,7 +17,7 @@
     <Folder Include="v12\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Apache.Avro" Version="1.7.7.2" />
+    <PackageReference Include="Apache.Avro" Version="1.12.0" />
     <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

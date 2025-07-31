@@ -64,7 +64,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Apache.Avro" Version="1.7.7.2" />
+    <PackageReference Include="Apache.Avro" Version="1.12.0" />
     <PackageReference Include="AutoMapper" Version="4.2.1" />
     <PackageReference Include="FluentValidationNA" Version="1.2.16" />
     <PackageReference Include="LinqExtender" Version="3.0.1" />
