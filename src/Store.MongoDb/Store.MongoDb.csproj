@@ -297,7 +297,7 @@
     <PackageReference Include="Crc32C.NET" Version="1.0.5.0" />
     <PackageReference Include="DnsClient" Version="1.2.0" />
     <PackageReference Include="LinqToQuerystring" Version="0.7.0.8" />
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.3" />

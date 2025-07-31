@@ -531,7 +531,7 @@
     <PackageReference Include="Apache.Avro" Version="1.7.7.2" />
     <PackageReference Include="Fare" Version="1.0.3" />
     <PackageReference Include="FluentValidationNA" Version="1.2.16" />
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SuperSocket.ClientEngine.Core" Version="0.10.0" />
     <PackageReference Include="SuperWebSocket" Version="0.9.0.2" />

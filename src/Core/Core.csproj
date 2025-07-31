@@ -68,7 +68,7 @@
     <PackageReference Include="AutoMapper" Version="4.2.1" />
     <PackageReference Include="FluentValidationNA" Version="1.2.16" />
     <PackageReference Include="LinqExtender" Version="3.0.1" />
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
