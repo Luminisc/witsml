@@ -453,7 +453,7 @@ namespace PDS.WITSMLstudio.Store.Data
 
             if (Logger.IsDebugEnabled)
             {
-                var filterJson = resultFilter.Render(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry);
+                var filterJson = resultFilter.Render(new RenderArgs<T>(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry));
                 Logger.Debug($"Detected query filters: {filterJson}");
             }
 
@@ -483,7 +483,7 @@ namespace PDS.WITSMLstudio.Store.Data
 
                 if (Logger.IsDebugEnabled)
                 {
-                    var projectionJson = projection.Render(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry);
+                    var projectionJson = projection.Render(new RenderArgs<T>(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry));
                     Logger.Debug($"Detected query projection: {projectionJson}");
                 }
 

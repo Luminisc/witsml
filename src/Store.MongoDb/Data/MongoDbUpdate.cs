@@ -449,8 +449,8 @@ namespace PDS.WITSMLstudio.Store.Data
             if (!Logger.IsDebugEnabled)
                 return;
 
-            var filterJson = filter.Render(Collection.DocumentSerializer, Collection.Settings.SerializerRegistry);
-            var updateJson = update.Render(Collection.DocumentSerializer, Collection.Settings.SerializerRegistry);
+            var filterJson = filter.Render(new RenderArgs<T>(Collection.DocumentSerializer, Collection.Settings.SerializerRegistry));
+            var updateJson = update.Render(new RenderArgs<T>(Collection.DocumentSerializer, Collection.Settings.SerializerRegistry));
             Logger.Debug($"Detected update parameters: {updateJson}");
             Logger.Debug($"Detected update filters: {filterJson}");
         }

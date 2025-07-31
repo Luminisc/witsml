@@ -886,7 +886,7 @@ namespace PDS.WITSMLstudio.Store.Data.Channels
 
             if (Logger.IsDebugEnabled && filter != null)
             {
-                var filterJson = filter.Render(collection.DocumentSerializer, collection.Settings.SerializerRegistry);
+                var filterJson = filter.Render(new RenderArgs<ChannelDataChunk>(collection.DocumentSerializer, collection.Settings.SerializerRegistry));
                 Logger.DebugFormat("Channel Data query filters: {0}", filterJson);
             }
 

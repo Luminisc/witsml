@@ -16,19 +16,21 @@
 // limitations under the License.
 //-----------------------------------------------------------------------
 
+using Hangfire.Mongo;
+using Hangfire.Mongo.Migration.Strategies;
+using Hangfire.Mongo.Migration.Strategies.Backup;
+using log4net.Config;
+using PDS.WITSMLstudio.Framework;
+using PDS.WITSMLstudio.Framework.Web;
+using PDS.WITSMLstudio.Store.Configuration;
+using PDS.WITSMLstudio.Store.Controllers;
+using PDS.WITSMLstudio.Store.Data;
+using PDS.WITSMLstudio.Store.Jobs.Configuration;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
-using log4net.Config;
-using Hangfire.Mongo;
-using PDS.WITSMLstudio.Framework;
-using PDS.WITSMLstudio.Framework.Web;
-using PDS.WITSMLstudio.Store.Configuration;
-using PDS.WITSMLstudio.Store.Data;
-using PDS.WITSMLstudio.Store.Jobs.Configuration;
-using PDS.WITSMLstudio.Store.Controllers;
 
 namespace PDS.WITSMLstudio.Store
 {
@@ -63,8 +65,8 @@ namespace PDS.WITSMLstudio.Store
                 {
                     MigrationOptions = new MongoMigrationOptions()
                     {
-                        Strategy = MongoMigrationStrategy.Migrate,
-                        BackupStrategy = MongoBackupStrategy.None,
+                        MigrationStrategy = new MigrateMongoMigrationStrategy(),
+                        BackupStrategy = new NoneMongoBackupStrategy(),
                     }
                 };
 

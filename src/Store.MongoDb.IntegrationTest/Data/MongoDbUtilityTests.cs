@@ -54,7 +54,7 @@ namespace PDS.WITSMLstudio.Store.Data
             var wellbore141Uri = "eml://witsml14/well(well141)/wellbore(wellbore141)";
             var filters141 = MongoDbUtility.GetEntityFilter<Wellbore>(new EtpUri(wellbore141Uri));
             Assert.IsNotNull(filters141);
-            var filters141Json = filters141.Render(collection.DocumentSerializer, collection.Settings.SerializerRegistry);
+            var filters141Json = filters141.Render(new RenderArgs<Wellbore>(collection.DocumentSerializer, collection.Settings.SerializerRegistry));
             Assert.IsNotNull(filters141Json);
             Assert.AreEqual(2, filters141Json.ElementCount);
             var filterElements = filters141Json.Elements.ToList();
@@ -64,7 +64,7 @@ namespace PDS.WITSMLstudio.Store.Data
 
             var wellbore200Uri = "eml://witsml20/wellbore(wellbore200)";
             var filters200 = MongoDbUtility.GetEntityFilter<Wellbore>(new EtpUri(wellbore200Uri), ObjectTypes.Uuid);
-            var filters200Json = filters200.Render(collection.DocumentSerializer, collection.Settings.SerializerRegistry);
+            var filters200Json = filters200.Render(new RenderArgs<Wellbore>(collection.DocumentSerializer, collection.Settings.SerializerRegistry));
             Assert.IsNotNull(filters200Json);
             Assert.AreEqual(1, filters200Json.ElementCount);
             Assert.AreEqual(ObjectTypes.Uuid, filters200Json.Elements.ToList()[0].Name);
@@ -107,14 +107,14 @@ namespace PDS.WITSMLstudio.Store.Data
 
             var filter = MongoDbUtility.BuildFilter<Well>(ObjectTypes.Uid, ObjectTypes.Uid);
             Assert.IsNotNull(filter);
-            var filterJson = filter.Render(collection.DocumentSerializer, collection.Settings.SerializerRegistry);
+            var filterJson = filter.Render(new RenderArgs<Well>(collection.DocumentSerializer, collection.Settings.SerializerRegistry));
             Assert.IsNotNull(filterJson);
             Assert.AreEqual(1, filterJson.ElementCount);
             Assert.AreEqual(ObjectTypes.Uid, filterJson.Elements.ToList()[0].Name);
 
             filter = MongoDbUtility.BuildFilter<Well>(ObjectTypes.Uid, true);
             Assert.IsNotNull(filter);
-            filterJson = filter.Render(collection.DocumentSerializer, collection.Settings.SerializerRegistry);
+            filterJson = filter.Render(new RenderArgs<Well>(collection.DocumentSerializer, collection.Settings.SerializerRegistry));
             Assert.IsNotNull(filterJson);
             Assert.AreEqual(1, filterJson.ElementCount);
             Assert.AreEqual(ObjectTypes.Uid, filterJson.Elements.ToList()[0].Name);

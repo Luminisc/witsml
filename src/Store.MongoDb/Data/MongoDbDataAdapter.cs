@@ -278,7 +278,7 @@ namespace PDS.WITSMLstudio.Store.Data
         /// Gets an <see cref="IQueryable{T}"/> instance for the default collection.
         /// </summary>
         /// <returns>An executable query.</returns>
-        protected IMongoQueryable<T> GetQuery()
+        protected IQueryable<T> GetQuery()
         {
             return GetQuery<T>(DbCollectionName);
         }
@@ -289,7 +289,7 @@ namespace PDS.WITSMLstudio.Store.Data
         /// <typeparam name="TObject">The type of the object.</typeparam>
         /// <param name="dbCollectionName">Name of the database collection.</param>
         /// <returns>An executable query.</returns>
-        protected IMongoQueryable<TObject> GetQuery<TObject>(string dbCollectionName)
+        protected IQueryable<TObject> GetQuery<TObject>(string dbCollectionName)
         {
             return GetCollection<TObject>(dbCollectionName).AsQueryable();
         }

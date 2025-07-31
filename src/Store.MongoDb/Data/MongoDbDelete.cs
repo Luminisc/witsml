@@ -16,6 +16,11 @@
 // limitations under the License.
 //-----------------------------------------------------------------------
 
+using Energistics.Etp.Common.Datatypes;
+using MongoDB.Driver;
+using PDS.WITSMLstudio.Data;
+using PDS.WITSMLstudio.Framework;
+using PDS.WITSMLstudio.Store.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,10 +30,6 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using Energistics.Etp.Common.Datatypes;
-using MongoDB.Driver;
-using PDS.WITSMLstudio.Framework;
-using PDS.WITSMLstudio.Data;
 
 namespace PDS.WITSMLstudio.Store.Data
 {
@@ -486,8 +487,8 @@ namespace PDS.WITSMLstudio.Store.Data
             if (!Logger.IsDebugEnabled)
                 return;
 
-            var filterJson = filter.Render(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry);
-            var updateJson = update.Render(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry);
+            var filterJson = filter.Render(new RenderArgs<T>(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry));
+            var updateJson = update.Render(new RenderArgs<T>(_collection.DocumentSerializer, _collection.Settings.SerializerRegistry));
             Logger.Debug($"Detected partial delete parameters: {updateJson}");
             Logger.Debug($"Detected partial delete filters: {filterJson}");
         }
