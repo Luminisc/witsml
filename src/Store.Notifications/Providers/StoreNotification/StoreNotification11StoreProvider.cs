@@ -22,7 +22,6 @@ using System.ComponentModel.Composition;
 using System.Text;
 using System.Threading.Tasks;
 using Confluent.Kafka;
-using Confluent.Kafka.Serialization;
 using Energistics.Etp.v11.Protocol.StoreNotification;
 using PDS.WITSMLstudio.Framework;
 using PDS.WITSMLstudio.Store.Configuration;
@@ -37,11 +36,11 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class StoreNotification11StoreProvider : StoreNotification11StoreProviderBase
     {
-        private readonly IDictionary<string, object> _config;
-        private readonly StringDeserializer _keyDeserializer;
-        private readonly StringDeserializer _valueDeserializer;
+        private readonly IDictionary<string, string> _config;
+        private readonly IDeserializer<string> _keyDeserializer;
+        private readonly IDeserializer<string> _valueDeserializer;
         private readonly TimeSpan _timeout;
-        private Consumer<string, string> _consumer;
+        private IConsumer<string, string> _consumer;
         private bool _isCancelled;
 
         /// <summary>
@@ -50,14 +49,14 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
         public StoreNotification11StoreProvider()
         {
             _timeout = TimeSpan.FromMilliseconds(KafkaSettings.PollingIntervalInMilliseconds);
-            _keyDeserializer = new StringDeserializer(Encoding.UTF8);
-            _valueDeserializer = new StringDeserializer(Encoding.UTF8);
+            _keyDeserializer = Deserializers.Utf8;
+            _valueDeserializer = Deserializers.Utf8;
 
-            _config = new Dictionary<string, object>
+            _config = new Dictionary<string, string>
             {
                 {KafkaSettings.DebugKey, KafkaSettings.DebugContexts},
                 {KafkaSettings.BrokerListKey, KafkaSettings.BrokerList},
-                {KafkaSettings.EnableAutoCommitKey, KafkaSettings.EnableAutoCommit}
+                {KafkaSettings.EnableAutoCommitKey, KafkaSettings.EnableAutoCommit.ToString()}
             };
         }
 
@@ -73,26 +72,25 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
             _config[KafkaSettings.GroupIdKey] = Session.ApplicationName;
 
             // Create and configure a new Consumer instance
-            _consumer = new Consumer<string, string>(_config, _keyDeserializer, _valueDeserializer);
+            _consumer = new ConsumerBuilder<string, string>(_config)
+                .SetKeyDeserializer(_keyDeserializer)
+                .SetValueDeserializer(_valueDeserializer)
+                .SetPartitionsAssignedHandler((sender, partitions) =>
+                {
+                    Logger?.Debug($"Assigned partitions: [{string.Join(", ", partitions)}], member id: {_consumer.MemberId}");
+                    _consumer.Assign(partitions);
+                })
+                .SetPartitionsRevokedHandler((sender, partitions) =>
+                {
+                    Logger?.Warn($"Revoked partitions: [{string.Join(", ", partitions)}]");
+                    _consumer.Unassign();
+                })
+                .SetErrorHandler((sender, error) =>
+                {
+                    Logger?.Error($"Error: {error}");
+                })
+                .Build();
 
-            _consumer.OnPartitionsAssigned += (sender, partitions) =>
-            {
-                Logger?.Debug($"Assigned partitions: [{string.Join(", ", partitions)}], member id: {_consumer.MemberId}");
-                _consumer.Assign(partitions);
-            };
-
-            _consumer.OnPartitionsRevoked += (sender, partitions) =>
-            {
-                Logger?.Warn($"Revoked partitions: [{string.Join(", ", partitions)}]");
-                _consumer.Unassign();
-            };
-
-            _consumer.OnError += (sender, error) =>
-            {
-                Logger?.Error($"Error: {error}");
-            };
-
-            _consumer.OnMessage += OnMessage;
             _consumer.Subscribe(new[] {KafkaSettings.UpsertTopicName, KafkaSettings.DeleteTopicName});
 
             Task.Run(() =>
@@ -101,7 +99,8 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
                 {
                     while (!_isCancelled)
                     {
-                        _consumer?.Poll(_timeout);
+                        var message = _consumer.Consume();
+                        OnMessage(this, message);
                     }
                 }
                 catch (Exception ex)
@@ -121,13 +120,13 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
             _consumer = null;
         }
 
-        private void OnMessage(object sender, Message<string, string> message)
+        private void OnMessage(object sender, ConsumeResult<string, string> message)
         {
-            Logger?.Debug($"Topic: {message.Topic}; Partition: {message.Partition}; Offset: {message.Offset}; {message.Value}");
+            Logger?.Debug($"Topic: {message.Topic}; Partition: {message.Partition}; Offset: {message.Offset}; {message.Message.Value}");
 
             // Extract message values
-            var uri = message.Key;
-            var dataObject = message.Value;
+            var uri = message.Message.Key;
+            var dataObject = message.Message.Value;
             var timestamp = DateTime.UtcNow;
 
             // Detect Upsert/Delete based on topic name

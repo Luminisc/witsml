@@ -22,7 +22,6 @@ using System.ComponentModel.Composition;
 using System.Text;
 using System.Threading.Tasks;
 using Confluent.Kafka;
-using Confluent.Kafka.Serialization;
 using Energistics.DataAccess.WITSML141.ReferenceData;
 using log4net;
 using PDS.WITSMLstudio.Data.ChangeLogs;
@@ -39,18 +38,18 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
     public class StoreNotificationProducer : IStoreNotificationProducer
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(StoreNotificationProducer));
-        private readonly IDictionary<string, object> _config;
-        private readonly StringSerializer _keySerializer;
-        private readonly StringSerializer _valueSerializer;
+        private readonly IDictionary<string, string> _config;
+        private readonly ISerializer<string> _keyDeserializer;
+        private readonly ISerializer<string> _valueDeserializer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StoreNotificationProducer"/> class.
         /// </summary>
         public StoreNotificationProducer()
         {
-            _keySerializer = new StringSerializer(Encoding.UTF8);
-            _valueSerializer = new StringSerializer(Encoding.UTF8);
-            _config = new Dictionary<string, object>
+            _keyDeserializer = Serializers.Utf8;
+            _valueDeserializer = Serializers.Utf8;
+            _config = new Dictionary<string, string>
             {
                 {KafkaSettings.DebugKey, KafkaSettings.DebugContexts},
                 {KafkaSettings.BrokerListKey, KafkaSettings.BrokerList}
@@ -92,11 +91,14 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
             {
                 try
                 {
-                    using (var producer = new Producer<string, string>(_config, _keySerializer, _valueSerializer))
+                    using (var producer = new ProducerBuilder<string, string>(_config)
+                        .SetKeySerializer(_keyDeserializer)
+                        .SetValueSerializer(_valueDeserializer)
+                        .Build())
                     {
                         _log.Debug($"{producer.Name} producing on {topic}.");
 
-                        var task = producer.ProduceAsync(topic, uri, xml);
+                        var task = producer.ProduceAsync(topic, new Message<string, string>() { Key = uri, Value = xml });
                         var result = task.Result;
 
                         _log.Debug($"Partition: {result.Partition}; Offset: {result.Offset}");
