@@ -294,8 +294,6 @@
   <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
     <PackageReference Include="Apache.Avro" Version="1.7.7.2" />
-    <PackageReference Include="Crc32C.NET" Version="1.0.5.0" />
-    <PackageReference Include="DnsClient" Version="1.2.0" />
     <PackageReference Include="LinqToQuerystring" Version="0.7.0.8" />
     <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
@@ -307,11 +305,9 @@
     <PackageReference Include="MongoDB.Driver.Core" Version="2.9.1" />
     <PackageReference Include="MongoDB.Driver.GridFS" Version="2.9.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SharpCompress" Version="0.23.0" />
     <PackageReference Include="Snappy.NET" Version="1.1.1.8" />
     <PackageReference Include="SuperSocket.ClientEngine.Core" Version="0.10.0" />
     <PackageReference Include="SuperWebSocket" Version="0.9.0.2" />
-    <PackageReference Include="System.Buffers" Version="4.5.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="9.0.6" />
     <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
