@@ -39,7 +39,7 @@ namespace PDS.WITSMLstudio.Store
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            System.Web.Http.GlobalConfiguration.Configure(WebApiConfig.Register);
+            System.Web.Http.GlobalConfiguration.Configure((x) => WebApiConfig.Register(x));
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
