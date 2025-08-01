@@ -32,14 +32,6 @@ namespace PDS.WITSMLstudio.Connections
     public class Connection : INotifyPropertyChanged
     {
         /// <summary>
-        /// Initializes the <see cref="Connection"/> class.
-        /// </summary>
-        static Connection()
-        {
-            AutoMapper.Mapper.Initialize(x => x.CreateMap<Connection, Connection>());
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="Connection"/> class.
         /// </summary>
         public Connection()

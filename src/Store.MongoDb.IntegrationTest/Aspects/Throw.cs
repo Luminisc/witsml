@@ -94,7 +94,7 @@ namespace PDS.WITSMLstudio.Store.Aspects
             _filter = Throws.Predicate; // ?? (context => true);
         }
 
-        public IEnumerable<IAdvice> Advise(MethodInfo method)
+        public IEnumerable<IAdvice> Advise(MethodBase method)
         {
             yield return Advice.Basic.Before((instance, args) =>
             {
@@ -120,7 +120,7 @@ namespace PDS.WITSMLstudio.Store.Aspects
 
     public sealed class ThrowContext
     {
-        public ThrowContext(MethodInfo method, object instance, object[] args, bool isAfter = false)
+        public ThrowContext(MethodBase method, object instance, object[] args, bool isAfter = false)
         {
             Method = method;
             Instance = instance;
@@ -128,7 +128,7 @@ namespace PDS.WITSMLstudio.Store.Aspects
             IsAfter = isAfter;
         }
 
-        public MethodInfo Method { get; }
+        public MethodBase Method { get; }
 
         public object Instance { get; }
 
