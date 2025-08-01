@@ -35,35 +35,33 @@
   <ItemGroup>
     <PackageReference Include="Apache.Avro" Version="1.12.0" />
     <PackageReference Include="log4net" Version="3.1.0" />
-    <PackageReference Include="Microsoft.AspNet.Cors" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.3" />
-    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.3" />
+    <PackageReference Include="Microsoft.AspNet.Cors" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Owin" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.3.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="1.0.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Owin" Version="3.0.1" />
-    <PackageReference Include="Microsoft.Owin.Cors" Version="3.0.1" />
-    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="3.0.1" />
-    <PackageReference Include="Microsoft.Owin.Security" Version="3.0.1" />
-    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="3.0.1" />
-    <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="8.13.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.13.0" />
+    <PackageReference Include="Microsoft.Owin" Version="4.2.3" />
+    <PackageReference Include="Microsoft.Owin.Cors" Version="4.2.3" />
+    <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.3" />
+    <PackageReference Include="Microsoft.Owin.Security" Version="4.2.3" />
+    <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="4.2.3" />
+    <PackageReference Include="Microsoft.Web.Infrastructure" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Owin" Version="1.0" />
     <PackageReference Include="SuperSocket.ClientEngine.Core" Version="0.10.0" />
     <PackageReference Include="SuperWebSocket" Version="0.9.0.2" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.6" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.0.0" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.13.0" />
     <PackageReference Include="Thinktecture.IdentityModel.Core" Version="1.4.0" />
     <PackageReference Include="WebSocket4Net" Version="0.15.2" />
   </ItemGroup>
-  <PropertyGroup />
-  <PropertyGroup />
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>

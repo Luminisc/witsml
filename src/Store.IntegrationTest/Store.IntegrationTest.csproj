@@ -1108,7 +1108,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.6" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestData\49025109020000_13345_Log.xml">
