@@ -73,7 +73,6 @@
     <PackageReference Include="NConcern" Version="4.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Shouldly" Version="4.3.0" />
-    <PackageReference Include="Snappy.NET" Version="1.1.1.8" />
     <PackageReference Include="SuperSocket.ClientEngine.Core" Version="0.10.0" />
     <PackageReference Include="SuperWebSocket" Version="0.9.0.2" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
