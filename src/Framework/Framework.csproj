@@ -40,7 +40,6 @@
     <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
     <PackageReference Include="System.ComponentModel.Composition.Registration" Version="9.0.7" />
     <PackageReference Include="System.Reflection.Context" Version="9.0.7" />

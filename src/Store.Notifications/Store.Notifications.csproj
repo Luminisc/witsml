@@ -36,16 +36,11 @@
     <ProjectReference Include="..\Store.Core\Store.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Apache.Avro" Version="1.12.0" />
     <PackageReference Include="Confluent.Kafka" Version="2.11.0" />
-    <PackageReference Include="log4net" Version="3.1.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SuperSocket.ClientEngine.Core" Version="0.10.0" />
     <PackageReference Include="SuperWebSocket" Version="0.9.0.2" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
     <PackageReference Include="WebSocket4Net" Version="0.15.2" />
   </ItemGroup>
 </Project>
