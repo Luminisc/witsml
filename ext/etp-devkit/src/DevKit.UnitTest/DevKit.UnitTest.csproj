@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>Energistics.Etp</RootNamespace>
     <AssemblyName>ETP.DevKit.UnitTest</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Net" />
+    <PackageReference Include="log4net" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ext\etp.net\src\ETP.Messages\ETP.Messages.csproj" />
@@ -15,9 +16,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="v12\" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="log4net" Version="3.1.0" />
-    <PackageReference Include="Microsoft.VisualStudio.UnitTesting" Version="11.0.50727.1" />
   </ItemGroup>
 </Project>
