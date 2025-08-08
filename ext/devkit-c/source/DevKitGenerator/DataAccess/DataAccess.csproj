@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>Energistics.DataAccess</RootNamespace>
     <AssemblyName>Energistics.DataAccess</AssemblyName>
@@ -9,11 +9,7 @@
     <SccAuxPath></SccAuxPath>
     <SccProvider></SccProvider>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-  </PropertyGroup>
-  <PropertyGroup>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>DataAccessSigningKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
@@ -40,6 +36,4 @@
   <ItemGroup>
     <Compile Remove="DataObject.cs" />
   </ItemGroup>
-  <PropertyGroup />
-  <PropertyGroup />
 </Project>

@@ -119,7 +119,7 @@ namespace Energistics.Generator
 
             // Hard code default to simplify debugging.
             if (!haveRootFolder && !ConfigurationManager.AppSettings.AllKeys.Contains("ROOT_FOLDER"))
-                ConfigurationManager.AppSettings["ROOT_FOLDER"] = @"..\..\..\..\..\";
+                ConfigurationManager.AppSettings["ROOT_FOLDER"] = @"..\..\..\..\..\..\";
 
             try
             {
@@ -205,7 +205,17 @@ namespace Energistics.Generator
             {
                 foreach (string wsdlFile in Directory.GetFiles(wsdlPath, "*.wsdl"))
                 {
-                    ProcessWSDL(String.Format("\"{0}\" /out:\"{1}\\{2}\" /namespace:Energistics.DataAccess.{2}.{3}", wsdlFile, Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting(setName + "_ENERGY_ML_DATA_ACCESS_PROJ_PATH"), setName, Path.GetFileNameWithoutExtension(wsdlFile)), setName);
+                    //var args = string.Format("\"{0}\" /out:\"{1}\\{2}\" /namespace:Energistics.DataAccess.{2}.{3}", wsdlFile, Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting(setName + "_ENERGY_ML_DATA_ACCESS_PROJ_PATH"), setName, Path.GetFileNameWithoutExtension(wsdlFile));
+                    var args = string.Format("\"{0}\" --outputDir \"{1}\\{2}\" --namespace \"*,Energistics.DataAccess.{2}.{3}\" --outputFile \"{3}\" --syncOnly",
+                        wsdlFile, 
+                        Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting(setName + "_ENERGY_ML_DATA_ACCESS_PROJ_PATH"), 
+                        setName, 
+                        Path.GetFileNameWithoutExtension(wsdlFile));
+                    var existingFilePath = $"{Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting(setName + "_ENERGY_ML_DATA_ACCESS_PROJ_PATH")}\\{setName}\\{Path.GetFileNameWithoutExtension(wsdlFile)}.cs";
+                    if (File.Exists(existingFilePath))
+                        File.Delete(existingFilePath);
+
+                    ProcessWSDL(args, setName);
                 }
             }
         }
@@ -214,7 +224,7 @@ namespace Energistics.Generator
         {
             using (Process p = new Process())
             {
-                p.StartInfo.FileName = Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting("MS_SDK") + @"\wsdl.exe";
+                p.StartInfo.FileName = "dotnet-svcutil";
                 p.StartInfo.Arguments = args;
                 p.StartInfo.RedirectStandardError = true;
                 p.StartInfo.RedirectStandardOutput = true;

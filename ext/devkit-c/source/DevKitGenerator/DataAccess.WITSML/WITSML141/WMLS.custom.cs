@@ -113,34 +113,34 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         /// <value>The collection of name/value pairs.</value>
         public IDictionary<string, string> Headers { get; set; }
 
-        /// <summary>
-        /// Creates a <see cref="T:System.Net.WebRequest" /> for the specified <paramref name="uri" />.
-        /// </summary>
-        /// <param name="uri">The <see cref="T:System.Uri" /> to use when creating the <see cref="T:System.Net.WebRequest" />.</param>
-        /// <returns>The <see cref="T:System.Net.WebRequest" />.</returns>
-        protected override WebRequest GetWebRequest(Uri uri)
-        {
-            var request = base.GetWebRequest(uri);
-            var httpRequest = request as HttpWebRequest;
+        ///// <summary>
+        ///// Creates a <see cref="T:System.Net.WebRequest" /> for the specified <paramref name="uri" />.
+        ///// </summary>
+        ///// <param name="uri">The <see cref="T:System.Uri" /> to use when creating the <see cref="T:System.Net.WebRequest" />.</param>
+        ///// <returns>The <see cref="T:System.Net.WebRequest" />.</returns>
+        //protected override WebRequest GetWebRequest(Uri uri)
+        //{
+        //    var request = base.GetWebRequest(uri);
+        //    var httpRequest = request as HttpWebRequest;
 
-            if (httpRequest == null)
-                return request;
+        //    if (httpRequest == null)
+        //        return request;
 
-            if (AcceptCompressedResponses)
-            {
-                httpRequest.Headers.Add("Accept-Encoding", "gzip");
-                httpRequest.AutomaticDecompression = DecompressionMethods.GZip;
-            }
+        //    if (AcceptCompressedResponses)
+        //    {
+        //        httpRequest.Headers.Add("Accept-Encoding", "gzip");
+        //        httpRequest.AutomaticDecompression = DecompressionMethods.GZip;
+        //    }
 
-            if (Headers != null)
-            {
-                foreach (var header in Headers)
-                {
-                    httpRequest.Headers[header.Key] = header.Value;
-                }
-            }
+        //    if (Headers != null)
+        //    {
+        //        foreach (var header in Headers)
+        //        {
+        //            httpRequest.Headers[header.Key] = header.Value;
+        //        }
+        //    }
 
-            return request;
-        }
+        //    return request;
+        //}
     }
 }

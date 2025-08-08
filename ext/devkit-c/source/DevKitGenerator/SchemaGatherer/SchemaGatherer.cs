@@ -101,7 +101,7 @@ namespace Energistics.SchemaGatherer
 
             // Hard code default to simplify debugging.
             if (!haveRootFolder && !ConfigurationManager.AppSettings.AllKeys.Contains("ROOT_FOLDER"))
-                ConfigurationManager.AppSettings["ROOT_FOLDER"] = @"..\..\..\..\..\";
+                ConfigurationManager.AppSettings["ROOT_FOLDER"] = @"..\..\..\..\..\..\";
 
             try
             {
