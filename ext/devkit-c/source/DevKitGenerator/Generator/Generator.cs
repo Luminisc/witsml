@@ -206,7 +206,7 @@ namespace Energistics.Generator
                 foreach (string wsdlFile in Directory.GetFiles(wsdlPath, "*.wsdl"))
                 {
                     //var args = string.Format("\"{0}\" /out:\"{1}\\{2}\" /namespace:Energistics.DataAccess.{2}.{3}", wsdlFile, Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting(setName + "_ENERGY_ML_DATA_ACCESS_PROJ_PATH"), setName, Path.GetFileNameWithoutExtension(wsdlFile));
-                    var args = string.Format("\"{0}\" --outputDir \"{1}\\{2}\" --namespace \"*,Energistics.DataAccess.{2}.{3}\" --outputFile \"{3}\" --syncOnly",
+                    var args = string.Format("\"{0}\" --outputDir \"{1}\\{2}\" --namespace \"*,Energistics.DataAccess.{2}.{3}\" --outputFile \"{3}\" --sync",
                         wsdlFile, 
                         Energistics.SchemaGatherer.SchemaGatherer.GetAppSetting(setName + "_ENERGY_ML_DATA_ACCESS_PROJ_PATH"), 
                         setName, 
