@@ -73,16 +73,16 @@
 // Illinois, Fortner Software, Unidata Program Center (netCDF), The Independent JPEG Group
 // (JPEG), Jean-loup Gailly and Mark Adler (gzip), and Digital Equipment Corporation (DEC). 
 // 
+using Energistics.DataAccess.ClientBaseBehaviors;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.ServiceModel;
+using System.ServiceModel.Description;
+using System.Text;
 using System.Text.RegularExpressions;
-using System.Web.Services.Protocols;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.IO.Compression;
 
 namespace Energistics.DataAccess
 {
@@ -339,26 +339,62 @@ namespace Energistics.DataAccess
         /// Initializes an instance of the WMLS client proxy for the specified <see cref="WMLSVersion"/>.
         /// </summary>
         /// <returns></returns>
-        public SoapHttpClientProtocol CreateClientProxy()
+        public object CreateClientProxy()
         {
-            Type wmlsType = Type.GetType("Energistics.DataAccess." + Enum.GetName(typeof(WMLSVersion), ver) + ".WMLS.WMLS");
-            SoapHttpClientProtocol service = (SoapHttpClientProtocol)wmlsType.GetConstructor(new Type[0]).Invoke(new object[] { });
+            var wmlsType = Type.GetType("Energistics.DataAccess." + Enum.GetName(typeof(WMLSVersion), ver) + ".WMLS.WMLS");
 
-            service.Url = Url;
-            service.Timeout = Timeout;
-            service.Proxy = Proxy;
-            service.Credentials = GetNetworkCredential();
-            service.PreAuthenticate = IsPreAuthenticationEnabled;
-
-            var client = service as IWitsmlClient;
-            if (client != null)
+            var binding = new BasicHttpBinding
             {
-                client.AcceptCompressedResponses = AcceptCompressedResponses;
-                client.CompressRequests = CompressRequests;
-                client.Headers = Headers;
+                MaxReceivedMessageSize = int.MaxValue,
+                SendTimeout = TimeSpan.FromMilliseconds(Timeout),
+                ReceiveTimeout = TimeSpan.FromMilliseconds(Timeout)
+            };
+
+            if (Url.StartsWith("https", StringComparison.OrdinalIgnoreCase))
+            {
+                binding.Security.Mode = BasicHttpSecurityMode.Transport;
             }
 
-            return service;
+            if (CompressRequests || AcceptCompressedResponses)
+            {
+                binding.MessageEncoding = WSMessageEncoding.Mtom;
+            }
+
+            var endpointAddress = new EndpointAddress(Url);
+
+            var clientConstructor = wmlsType.GetConstructor(new[] { typeof(System.ServiceModel.Channels.Binding), typeof(EndpointAddress) });
+            var client = clientConstructor.Invoke(new object[] { binding, endpointAddress });
+
+            var clientCredentials = wmlsType.GetProperty("ClientCredentials").GetValue(client) as ClientCredentials;
+
+            var networkCredential = GetNetworkCredential();
+            if (networkCredential != null)
+            {
+                clientCredentials.UserName.UserName = networkCredential.UserName;
+                clientCredentials.UserName.Password = networkCredential.Password;
+            }
+
+            var clientEndpoint = client.GetType().GetProperty("Endpoint").GetValue(client) as ServiceEndpoint;
+
+            if (Proxy != null)
+            {
+                var webProxyBehavior = new WebProxyBehavior(Proxy);
+                clientEndpoint.EndpointBehaviors.Add(webProxyBehavior);
+            }
+
+            if (IsPreAuthenticationEnabled)
+            {
+                var preAuthBehavior = new PreAuthenticationBehavior();
+                clientEndpoint.EndpointBehaviors.Add(preAuthBehavior);
+            }
+
+            if (Headers != null && Headers.Count > 0)
+            {
+                var headersBehavior = new CustomHeadersBehavior(Headers);
+                clientEndpoint.EndpointBehaviors.Add(headersBehavior);
+            }
+
+            return client;
         }
 
 

@@ -21,8 +21,6 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess.PRODML\DataAccess.PRODML.csproj" />
-    <ProjectReference Include="..\DataAccess.RESQML\DataAccess.RESQML.csproj" />
     <ProjectReference Include="..\DataAccess.WITSML\DataAccess.WITSML.csproj" />
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
   </ItemGroup>

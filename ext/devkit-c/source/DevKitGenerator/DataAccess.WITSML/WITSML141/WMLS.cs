@@ -13,38 +13,64 @@ namespace Energistics.DataAccess.WITSML141.WMLS
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.witsml.org/wsdl/120", ConfigurationName="Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort")]
-    public interface IWMLS
+    public interface StoreSoapPort
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_AddToStore", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse WMLS_AddToStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreRequest request);
         
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_AddToStore", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse> WMLS_AddToStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_DeleteFromStore", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse WMLS_DeleteFromStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreRequest request);
+        
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_DeleteFromStore", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse> WMLS_DeleteFromStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreRequest request);
         
         // CODEGEN: Создание контракта сообщения, так как пространство имен упаковщика (http://www.witsml.org/message/120) сообщения WMLS_GetBaseMsgRequest не соответствует значению по умолчанию (http://www.witsml.org/wsdl/120).
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetBaseMsg", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse WMLS_GetBaseMsg(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetBaseMsg", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse> WMLS_GetBaseMsgAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetCap", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse WMLS_GetCap(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest request);
         
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetCap", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse> WMLS_GetCapAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetFromStore", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse WMLS_GetFromStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreRequest request);
+        
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetFromStore", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse> WMLS_GetFromStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreRequest request);
         
         // CODEGEN: Создание контракта сообщения, так как пространство имен упаковщика (http://www.witsml.org/message/120) сообщения WMLS_GetVersionRequest не соответствует значению по умолчанию (http://www.witsml.org/wsdl/120).
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetVersion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse WMLS_GetVersion(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetVersion", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse> WMLS_GetVersionAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_UpdateInStore", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse WMLS_UpdateInStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreRequest request);
+        
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_UpdateInStore", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse> WMLS_UpdateInStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -386,13 +412,13 @@ namespace Energistics.DataAccess.WITSML141.WMLS
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
-    public interface StoreSoapPortChannel : Energistics.DataAccess.WITSML141.WMLS.IWMLS, System.ServiceModel.IClientChannel
+    public interface StoreSoapPortChannel : Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
-    public partial class WMLS : System.ServiceModel.ClientBase<Energistics.DataAccess.WITSML141.WMLS.IWMLS>, Energistics.DataAccess.WITSML141.WMLS.IWMLS
+    public partial class StoreSoapPortClient : System.ServiceModel.ClientBase<Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort>, Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort
     {
         
         /// <summary>
@@ -402,41 +428,41 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         /// <param name="clientCredentials">Учетные данные клиента.</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public WMLS() : 
-                base(WMLS.GetDefaultBinding(), WMLS.GetDefaultEndpointAddress())
+        public StoreSoapPortClient() : 
+                base(StoreSoapPortClient.GetDefaultBinding(), StoreSoapPortClient.GetDefaultEndpointAddress())
         {
-            this.Endpoint.Name = EndpointConfiguration.WMLS.ToString();
+            this.Endpoint.Name = EndpointConfiguration.StoreSoapPort.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public WMLS(EndpointConfiguration endpointConfiguration) : 
-                base(WMLS.GetBindingForEndpoint(endpointConfiguration), WMLS.GetEndpointAddress(endpointConfiguration))
-        {
-            this.Endpoint.Name = endpointConfiguration.ToString();
-            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-        }
-        
-        public WMLS(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(WMLS.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        public StoreSoapPortClient(EndpointConfiguration endpointConfiguration) : 
+                base(StoreSoapPortClient.GetBindingForEndpoint(endpointConfiguration), StoreSoapPortClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public WMLS(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(WMLS.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        public StoreSoapPortClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(StoreSoapPortClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public WMLS(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public StoreSoapPortClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(StoreSoapPortClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public StoreSoapPortClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_AddToStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreRequest request)
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_AddToStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreRequest request)
         {
             return base.Channel.WMLS_AddToStore(request);
         }
@@ -448,13 +474,18 @@ namespace Energistics.DataAccess.WITSML141.WMLS
             inValue.XMLin = XMLin;
             inValue.OptionsIn = OptionsIn;
             inValue.CapabilitiesIn = CapabilitiesIn;
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_AddToStore(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_AddToStore(inValue);
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
         }
         
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreResponse> WMLS_AddToStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_AddToStoreRequest request)
+        {
+            return base.Channel.WMLS_AddToStoreAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_DeleteFromStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreRequest request)
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_DeleteFromStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreRequest request)
         {
             return base.Channel.WMLS_DeleteFromStore(request);
         }
@@ -466,13 +497,18 @@ namespace Energistics.DataAccess.WITSML141.WMLS
             inValue.QueryIn = QueryIn;
             inValue.OptionsIn = OptionsIn;
             inValue.CapabilitiesIn = CapabilitiesIn;
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_DeleteFromStore(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_DeleteFromStore(inValue);
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
         }
         
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreResponse> WMLS_DeleteFromStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_DeleteFromStoreRequest request)
+        {
+            return base.Channel.WMLS_DeleteFromStoreAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_GetBaseMsg(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest request)
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_GetBaseMsg(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest request)
         {
             return base.Channel.WMLS_GetBaseMsg(request);
         }
@@ -481,12 +517,25 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         {
             Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest inValue = new Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest();
             inValue.ReturnValueIn = ReturnValueIn;
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_GetBaseMsg(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_GetBaseMsg(inValue);
             return retVal.Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_GetCap(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest request)
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse> Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_GetBaseMsgAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest request)
+        {
+            return base.Channel.WMLS_GetBaseMsgAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgResponse> WMLS_GetBaseMsgAsync(short ReturnValueIn)
+        {
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest inValue = new Energistics.DataAccess.WITSML141.WMLS.WMLS_GetBaseMsgRequest();
+            inValue.ReturnValueIn = ReturnValueIn;
+            return ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_GetBaseMsgAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_GetCap(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest request)
         {
             return base.Channel.WMLS_GetCap(request);
         }
@@ -495,14 +544,19 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         {
             Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest inValue = new Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest();
             inValue.OptionsIn = OptionsIn;
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_GetCap(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_GetCap(inValue);
             CapabilitiesOut = retVal.CapabilitiesOut;
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
         }
         
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapResponse> WMLS_GetCapAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetCapRequest request)
+        {
+            return base.Channel.WMLS_GetCapAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_GetFromStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreRequest request)
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_GetFromStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreRequest request)
         {
             return base.Channel.WMLS_GetFromStore(request);
         }
@@ -514,14 +568,19 @@ namespace Energistics.DataAccess.WITSML141.WMLS
             inValue.QueryIn = QueryIn;
             inValue.OptionsIn = OptionsIn;
             inValue.CapabilitiesIn = CapabilitiesIn;
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_GetFromStore(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_GetFromStore(inValue);
             XMLout = retVal.XMLout;
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
         }
         
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreResponse> WMLS_GetFromStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetFromStoreRequest request)
+        {
+            return base.Channel.WMLS_GetFromStoreAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_GetVersion(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest request)
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_GetVersion(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest request)
         {
             return base.Channel.WMLS_GetVersion(request);
         }
@@ -529,12 +588,24 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         public string WMLS_GetVersion()
         {
             Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest inValue = new Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest();
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_GetVersion(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_GetVersion(inValue);
             return retVal.Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse Energistics.DataAccess.WITSML141.WMLS.IWMLS.WMLS_UpdateInStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreRequest request)
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse> Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_GetVersionAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest request)
+        {
+            return base.Channel.WMLS_GetVersionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionResponse> WMLS_GetVersionAsync()
+        {
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest inValue = new Energistics.DataAccess.WITSML141.WMLS.WMLS_GetVersionRequest();
+            return ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_GetVersionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort.WMLS_UpdateInStore(Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreRequest request)
         {
             return base.Channel.WMLS_UpdateInStore(request);
         }
@@ -546,9 +617,14 @@ namespace Energistics.DataAccess.WITSML141.WMLS
             inValue.XMLin = XMLin;
             inValue.OptionsIn = OptionsIn;
             inValue.CapabilitiesIn = CapabilitiesIn;
-            Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.IWMLS)(this)).WMLS_UpdateInStore(inValue);
+            Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse retVal = ((Energistics.DataAccess.WITSML141.WMLS.StoreSoapPort)(this)).WMLS_UpdateInStore(inValue);
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
+        }
+        
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreResponse> WMLS_UpdateInStoreAsync(Energistics.DataAccess.WITSML141.WMLS.WMLS_UpdateInStoreRequest request)
+        {
+            return base.Channel.WMLS_UpdateInStoreAsync(request);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -565,7 +641,7 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.WMLS))
+            if ((endpointConfiguration == EndpointConfiguration.StoreSoapPort))
             {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
@@ -579,7 +655,7 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.WMLS))
+            if ((endpointConfiguration == EndpointConfiguration.StoreSoapPort))
             {
                 return new System.ServiceModel.EndpointAddress("http://yourorg.com/yourwebservice");
             }
@@ -588,18 +664,18 @@ namespace Energistics.DataAccess.WITSML141.WMLS
         
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
-            return WMLS.GetBindingForEndpoint(EndpointConfiguration.WMLS);
+            return StoreSoapPortClient.GetBindingForEndpoint(EndpointConfiguration.StoreSoapPort);
         }
         
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
-            return WMLS.GetEndpointAddress(EndpointConfiguration.WMLS);
+            return StoreSoapPortClient.GetEndpointAddress(EndpointConfiguration.StoreSoapPort);
         }
         
         public enum EndpointConfiguration
         {
             
-            WMLS,
+            StoreSoapPort,
         }
     }
 }

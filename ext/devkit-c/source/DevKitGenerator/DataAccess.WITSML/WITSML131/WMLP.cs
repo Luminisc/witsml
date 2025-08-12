@@ -12,8 +12,8 @@ namespace Energistics.DataAccess.WITSML131.WMLP
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.witsml.org/wsdl/120", ConfigurationName= "Energistics.DataAccess.WITSML131.WMLP.WMLP")]
-    public interface IWMLP
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.witsml.org/wsdl/120", ConfigurationName="Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort")]
+    public interface PublishSoapPort
     {
         
         // CODEGEN: Создание контракта сообщения, так как пространство имен упаковщика (http://www.witsml.org/message/120) сообщения WMLP_GetBaseMsgRequest не соответствует значению по умолчанию (http://www.witsml.org/wsdl/120).
@@ -21,18 +21,32 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse WMLP_GetBaseMsg(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_GetBaseMsg", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse> WMLP_GetBaseMsgAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_GetCap", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse WMLP_GetCap(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest request);
+        
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_GetCap", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse> WMLP_GetCapAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest request);
         
         // CODEGEN: Создание контракта сообщения, так как пространство имен упаковщика (http://www.witsml.org/message/120) сообщения WMLP_GetVersionRequest не соответствует значению по умолчанию (http://www.witsml.org/wsdl/120).
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_GetVersion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse WMLP_GetVersion(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_GetVersion", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse> WMLP_GetVersionAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_Subscribe", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, SupportFaults=true, Use=System.ServiceModel.OperationFormatUse.Encoded)]
         Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse WMLP_Subscribe(Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeRequest request);
+        
+        // CODEGEN: Создается контракт сообщения, так как операция имеет много возвращаемых значений.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Publish.WMLP_Subscribe", ReplyAction="*")]
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse> WMLP_SubscribeAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -208,13 +222,13 @@ namespace Energistics.DataAccess.WITSML131.WMLP
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
-    public interface PublishSoapPortChannel : Energistics.DataAccess.WITSML131.WMLP.IWMLP, System.ServiceModel.IClientChannel
+    public interface PublishSoapPortChannel : Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
-    public partial class WMLP : System.ServiceModel.ClientBase<Energistics.DataAccess.WITSML131.WMLP.IWMLP>, Energistics.DataAccess.WITSML131.WMLP.IWMLP
+    public partial class PublishSoapPortClient : System.ServiceModel.ClientBase<Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort>, Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort
     {
         
         /// <summary>
@@ -224,41 +238,41 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         /// <param name="clientCredentials">Учетные данные клиента.</param>
         static partial void ConfigureEndpoint(System.ServiceModel.Description.ServiceEndpoint serviceEndpoint, System.ServiceModel.Description.ClientCredentials clientCredentials);
         
-        public WMLP() : 
-                base(WMLP.GetDefaultBinding(), WMLP.GetDefaultEndpointAddress())
+        public PublishSoapPortClient() : 
+                base(PublishSoapPortClient.GetDefaultBinding(), PublishSoapPortClient.GetDefaultEndpointAddress())
         {
-            this.Endpoint.Name = EndpointConfiguration.WMLP.ToString();
+            this.Endpoint.Name = EndpointConfiguration.PublishSoapPort.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public WMLP(EndpointConfiguration endpointConfiguration) : 
-                base(WMLP.GetBindingForEndpoint(endpointConfiguration), WMLP.GetEndpointAddress(endpointConfiguration))
-        {
-            this.Endpoint.Name = endpointConfiguration.ToString();
-            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
-        }
-        
-        public WMLP(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(WMLP.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
+        public PublishSoapPortClient(EndpointConfiguration endpointConfiguration) : 
+                base(PublishSoapPortClient.GetBindingForEndpoint(endpointConfiguration), PublishSoapPortClient.GetEndpointAddress(endpointConfiguration))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public WMLP(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(WMLP.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        public PublishSoapPortClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(PublishSoapPortClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress))
         {
             this.Endpoint.Name = endpointConfiguration.ToString();
             ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
         }
         
-        public WMLP(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public PublishSoapPortClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(PublishSoapPortClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress)
+        {
+            this.Endpoint.Name = endpointConfiguration.ToString();
+            ConfigureEndpoint(this.Endpoint, this.ClientCredentials);
+        }
+        
+        public PublishSoapPortClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress)
         {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse Energistics.DataAccess.WITSML131.WMLP.IWMLP.WMLP_GetBaseMsg(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest request)
+        Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort.WMLP_GetBaseMsg(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest request)
         {
             return base.Channel.WMLP_GetBaseMsg(request);
         }
@@ -267,12 +281,25 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         {
             Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest inValue = new Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest();
             inValue.ReturnValueIn = ReturnValueIn;
-            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.IWMLP)(this)).WMLP_GetBaseMsg(inValue);
+            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort)(this)).WMLP_GetBaseMsg(inValue);
             return retVal.Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse Energistics.DataAccess.WITSML131.WMLP.IWMLP.WMLP_GetCap(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest request)
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse> Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort.WMLP_GetBaseMsgAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest request)
+        {
+            return base.Channel.WMLP_GetBaseMsgAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgResponse> WMLP_GetBaseMsgAsync(short ReturnValueIn)
+        {
+            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest inValue = new Energistics.DataAccess.WITSML131.WMLP.WMLP_GetBaseMsgRequest();
+            inValue.ReturnValueIn = ReturnValueIn;
+            return ((Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort)(this)).WMLP_GetBaseMsgAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort.WMLP_GetCap(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest request)
         {
             return base.Channel.WMLP_GetCap(request);
         }
@@ -281,14 +308,19 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         {
             Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest inValue = new Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest();
             inValue.OptionsIn = OptionsIn;
-            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.IWMLP)(this)).WMLP_GetCap(inValue);
+            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort)(this)).WMLP_GetCap(inValue);
             CapabilitiesOut = retVal.CapabilitiesOut;
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
         }
         
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapResponse> WMLP_GetCapAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetCapRequest request)
+        {
+            return base.Channel.WMLP_GetCapAsync(request);
+        }
+        
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse Energistics.DataAccess.WITSML131.WMLP.IWMLP.WMLP_GetVersion(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest request)
+        Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort.WMLP_GetVersion(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest request)
         {
             return base.Channel.WMLP_GetVersion(request);
         }
@@ -296,12 +328,24 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         public string WMLP_GetVersion()
         {
             Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest inValue = new Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest();
-            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.IWMLP)(this)).WMLP_GetVersion(inValue);
+            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort)(this)).WMLP_GetVersion(inValue);
             return retVal.Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse Energistics.DataAccess.WITSML131.WMLP.IWMLP.WMLP_Subscribe(Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeRequest request)
+        System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse> Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort.WMLP_GetVersionAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest request)
+        {
+            return base.Channel.WMLP_GetVersionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionResponse> WMLP_GetVersionAsync()
+        {
+            Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest inValue = new Energistics.DataAccess.WITSML131.WMLP.WMLP_GetVersionRequest();
+            return ((Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort)(this)).WMLP_GetVersionAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort.WMLP_Subscribe(Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeRequest request)
         {
             return base.Channel.WMLP_Subscribe(request);
         }
@@ -312,10 +356,15 @@ namespace Energistics.DataAccess.WITSML131.WMLP
             inValue.SubscriptionIn = SubscriptionIn;
             inValue.OptionsIn = OptionsIn;
             inValue.CapabilitiesIn = CapabilitiesIn;
-            Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.IWMLP)(this)).WMLP_Subscribe(inValue);
+            Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse retVal = ((Energistics.DataAccess.WITSML131.WMLP.PublishSoapPort)(this)).WMLP_Subscribe(inValue);
             SubscriptionOut = retVal.SubscriptionOut;
             SuppMsgOut = retVal.SuppMsgOut;
             return retVal.Result;
+        }
+        
+        public System.Threading.Tasks.Task<Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeResponse> WMLP_SubscribeAsync(Energistics.DataAccess.WITSML131.WMLP.WMLP_SubscribeRequest request)
+        {
+            return base.Channel.WMLP_SubscribeAsync(request);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -332,7 +381,7 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.WMLP))
+            if ((endpointConfiguration == EndpointConfiguration.PublishSoapPort))
             {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
@@ -346,7 +395,7 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration)
         {
-            if ((endpointConfiguration == EndpointConfiguration.WMLP))
+            if ((endpointConfiguration == EndpointConfiguration.PublishSoapPort))
             {
                 return new System.ServiceModel.EndpointAddress("http://yourorg.com/yourwebservice");
             }
@@ -355,18 +404,18 @@ namespace Energistics.DataAccess.WITSML131.WMLP
         
         private static System.ServiceModel.Channels.Binding GetDefaultBinding()
         {
-            return WMLP.GetBindingForEndpoint(EndpointConfiguration.WMLP);
+            return PublishSoapPortClient.GetBindingForEndpoint(EndpointConfiguration.PublishSoapPort);
         }
         
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress()
         {
-            return WMLP.GetEndpointAddress(EndpointConfiguration.WMLP);
+            return PublishSoapPortClient.GetEndpointAddress(EndpointConfiguration.PublishSoapPort);
         }
         
         public enum EndpointConfiguration
         {
             
-            WMLP,
+            PublishSoapPort,
         }
     }
 }
