@@ -5,6 +5,8 @@ using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
 using System.ServiceModel.Dispatcher;
 
+// AI code, presumably not working
+
 namespace Energistics.DataAccess.ClientBaseBehaviors
 {
     public class WebProxyBehavior : IEndpointBehavior

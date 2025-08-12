@@ -378,6 +378,9 @@ namespace Energistics.DataAccess
 
             if (Proxy != null)
             {
+                binding.ProxyAddress = Proxy.Address;
+                binding.BypassProxyOnLocal = Proxy.BypassProxyOnLocal;
+
                 var webProxyBehavior = new WebProxyBehavior(Proxy);
                 clientEndpoint.EndpointBehaviors.Add(webProxyBehavior);
             }
