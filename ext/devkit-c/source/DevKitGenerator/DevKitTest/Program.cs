@@ -204,14 +204,14 @@ namespace DevkitTest
 
             wellList.Well = new List<Energistics.DataAccess.WITSML141.Well> {well};
 
-            using (var file = new FileStream("./CustomData.dat", FileMode.Create))
-            {
-                var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                formatter.Serialize(file, wellList);
+            //using (var file = new FileStream("./CustomData.dat", FileMode.Create))
+            //{
+            //    var formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            //    formatter.Serialize(file, wellList);
 
-                file.Position = 0;
-                formatter.Deserialize(file);
-            }
+            //    file.Position = 0;
+            //    formatter.Deserialize(file);
+            //}
 
             Console.ReadKey();
         }
