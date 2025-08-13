@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Exe</OutputType>
     <RootNamespace>Energistics.Generator</RootNamespace>
@@ -46,11 +46,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResqmlHD5Template.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Extensions" />
+    <PackageReference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0" Version="17.0.32112.339" />
+    <PackageReference Include="Mono.Options" Version="5.3.0.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.8" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\SchemaGatherer\App.config">
@@ -97,11 +95,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0" Version="10.0.30320" />
-    <PackageReference Include="Mono.Options" Version="5.3.0.1" />
-  </ItemGroup>
-  <PropertyGroup />
   <!--<PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)Generator\bin\$(Configuration)\$(TargetFramework)\Energistics.Generator.exe" "- -root-folder=$(SolutionDir)..\..\\"</PostBuildEvent>
   </PropertyGroup>-->

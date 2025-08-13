@@ -83,7 +83,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Xml;
 
 namespace Energistics.SchemaGatherer
@@ -175,7 +175,7 @@ namespace Energistics.SchemaGatherer
             if (!String.IsNullOrEmpty(value) && !Directory.Exists(value) && !File.Exists(value))
             {
                 String message = String.Format("Path '{0}' defined by setting '{1}' in app.config does not exist. Please edit your app.config file.", value, settingName);
-                MessageBox.Show(message, "BUILD ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(message, "BUILD ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw new Exception(message);
             }
             else if (!String.IsNullOrEmpty(value))
@@ -191,7 +191,7 @@ namespace Energistics.SchemaGatherer
             if (value == null)
             {
                 String message = String.Format("Setting '{0}' not defined in app.config. Please edit your app.config file.", settingName);
-                MessageBox.Show(message, "BUILD ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(message, "BUILD ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw new Exception(message);
             }
             return value;
