@@ -26,7 +26,7 @@ using PDS.WITSMLstudio.Data.Channels;
 using PDS.WITSMLstudio.Properties;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 
 namespace PDS.WITSMLstudio.Data.Logs
 {
@@ -159,12 +159,12 @@ namespace PDS.WITSMLstudio.Data.Logs
         /// <param name="channels">The collection of channels.</param>
         /// <param name="uuid">The uuid.</param>
         /// <returns>The <see cref="Witsml200.Channel"/> specified by the uuid.</returns>
-        public static Witsml200.Channel GetByUuid(this IEnumerable<Witsml200.Channel> channels, string uuid)
-        {
-            // NOTE: logging here is too verbose!
-            //_log.DebugFormat("Getting Channel by UUID: {0}", uuid);
-            return channels?.FirstOrDefault(x => x.Uuid.EqualsIgnoreCase(uuid));
-        }
+        //public static Witsml200.Channel GetByUuid(this IEnumerable<Witsml200.Channel> channels, string uuid)
+        //{
+        //    // NOTE: logging here is too verbose!
+        //    //_log.DebugFormat("Getting Channel by UUID: {0}", uuid);
+        //    return channels?.FirstOrDefault(x => x.Uuid.EqualsIgnoreCase(uuid));
+        //}
 
         /// <summary>
         /// Gets the <see cref="Witsml131.ComponentSchemas.LogCurveInfo"/> by mnemonic.
@@ -198,12 +198,12 @@ namespace PDS.WITSMLstudio.Data.Logs
         /// <param name="channels">The collection of channels.</param>
         /// <param name="mnemonic">The mnemonic.</param>
         /// <returns>The <see cref="Witsml200.Channel"/> specified by the mnemonic.</returns>
-        public static Witsml200.Channel GetByMnemonic(this IEnumerable<Witsml200.Channel> channels, string mnemonic)
-        {
-            // NOTE: logging here is too verbose!
-            //_log.DebugFormat("Getting Channel by mnemonic: {0}", mnemonic);
-            return channels?.FirstOrDefault(x => x.Mnemonic.EqualsIgnoreCase(mnemonic));
-        }
+        //public static Witsml200.Channel GetByMnemonic(this IEnumerable<Witsml200.Channel> channels, string mnemonic)
+        //{
+        //    // NOTE: logging here is too verbose!
+        //    //_log.DebugFormat("Getting Channel by mnemonic: {0}", mnemonic);
+        //    return channels?.FirstOrDefault(x => x.Mnemonic.EqualsIgnoreCase(mnemonic));
+        //}
 
         /// <summary>
         /// Gets the index range for the specified <see cref="Witsml131.ComponentSchemas.LogCurveInfo"/>.

@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Energistics.DataAccess;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 using Energistics.Etp.Common.Datatypes;
 using Energistics.Etp.v12.Datatypes;
 using Energistics.Etp.v12.Datatypes.Object;
@@ -176,12 +176,12 @@ namespace PDS.WITSMLstudio.Store.Providers.StoreNotification
             var collection = dataObject as IEnergisticsCollection;
             var iDataObject = collection?.Items?.OfType<IDataObject>().FirstOrDefault();
             var cDataObject = iDataObject as ICommonDataObject;
-            var aDataObject = dataObject as Witsml200.AbstractObject;
+            //var aDataObject = dataObject as Witsml200.AbstractObject;
 
-            var uri = iDataObject?.GetUri() ?? aDataObject?.GetUri() ?? new EtpUri();
-            var name = iDataObject?.Name ?? aDataObject?.Citation?.Title;
-            var lastChanged = cDataObject?.CommonData?.DateTimeLastChange?.ToUnixTimeMicroseconds() ??
-                              aDataObject?.Citation?.LastUpdate?.ToUnixTimeMicroseconds();
+            var uri = iDataObject?.GetUri() /*?? aDataObject?.GetUri()*/ ?? new EtpUri();
+            var name = iDataObject?.Name /*?? aDataObject?.Citation?.Title*/;
+            var lastChanged = cDataObject?.CommonData?.DateTimeLastChange?.ToUnixTimeMicroseconds() 
+                /*?? aDataObject?.Citation?.LastUpdate?.ToUnixTimeMicroseconds()*/;
 
             var etpDataObject = new DataObject();
 

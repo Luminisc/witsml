@@ -81,7 +81,7 @@ namespace PDS.WITSMLstudio.Store.Data.ChangeLogs
         /// <returns>A new or existing DbAuditHistory for the entity.</returns>
         public DbAuditHistory GetAuditHistory(EtpUri uri, object entity, ChangeInfoType changeType)
         {
-            var abstractObject = entity as Energistics.DataAccess.WITSML200.AbstractObject;
+            //var abstractObject = entity as Energistics.DataAccess.WITSML200.AbstractObject;
             var commonDataObject = entity as ICommonDataObject;
             var dataObject = entity as IDataObject;
             var wellObject = entity as IWellObject;
@@ -116,15 +116,15 @@ namespace PDS.WITSMLstudio.Store.Data.ChangeLogs
             // Keep audit history name properties in sync with the entity name properties.
             auditHistory.NameWellbore = wellboreObject?.NameWellbore;
             auditHistory.NameWell = wellObject?.NameWell ?? wellboreObject?.NameWell;
-            auditHistory.NameObject = dataObject?.Name ?? abstractObject?.Citation?.Title;
+            auditHistory.NameObject = dataObject?.Name /*?? abstractObject?.Citation?.Title*/;
 
             // Keep audit history source name property in sync
-            auditHistory.SourceName = commonDataObject?.CommonData?.SourceName ?? abstractObject?.Citation?.Originator;
+            auditHistory.SourceName = commonDataObject?.CommonData?.SourceName /*?? abstractObject?.Citation?.Originator*/;
 
             // Keep date/time of last change in sync with the entity
             auditHistory.CommonData.DateTimeLastChange = GetDateTimeLastChange(
                 commonDataObject?.CommonData?.DateTimeLastChange ?? 
-                (DateTimeOffset?)abstractObject?.Citation?.LastUpdate, 
+                null,//(DateTimeOffset?)abstractObject?.Citation?.LastUpdate, 
                 changeType);
 
             // Make sure date/time created matches first date/time last change
@@ -206,7 +206,7 @@ namespace PDS.WITSMLstudio.Store.Data.ChangeLogs
         /// <param name="entity">The entity.</param>
         public void SetDateTimeLastChange(object entity)
         {
-            var abstractObject = entity as Energistics.DataAccess.WITSML200.AbstractObject;
+            //var abstractObject = entity as Energistics.DataAccess.WITSML200.AbstractObject;
             var commonDataObject = entity as ICommonDataObject;
 
             if (commonDataObject != null)
@@ -214,10 +214,10 @@ namespace PDS.WITSMLstudio.Store.Data.ChangeLogs
                 commonDataObject.CommonData.DateTimeLastChange = DateTimeOffset.UtcNow;
             }
 
-            if (abstractObject != null)
-            {
-                abstractObject.Citation.LastUpdate = DateTime.UtcNow;
-            }
+            //if (abstractObject != null)
+            //{
+            //    abstractObject.Citation.LastUpdate = DateTime.UtcNow;
+            //}
         }
 
         /// <summary>

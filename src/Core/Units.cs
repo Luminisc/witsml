@@ -16,11 +16,11 @@
 // limitations under the License.
 //-----------------------------------------------------------------------
 
-using Energistics.DataAccess.WITSML200.ReferenceData;
+//using Energistics.DataAccess.WITSML200.ReferenceData;
 using Energistics.DataAccess;
 using PDS.WITSMLstudio.Framework;
 
-using UnitOfMeasureExt = Energistics.DataAccess.ExtensibleEnum<Energistics.DataAccess.WITSML200.ReferenceData.UnitOfMeasure>;
+//using UnitOfMeasureExt = Energistics.DataAccess.ExtensibleEnum<Energistics.DataAccess.WITSML200.ReferenceData.UnitOfMeasure>;
 
 namespace PDS.WITSMLstudio
 {
@@ -44,39 +44,39 @@ namespace PDS.WITSMLstudio
             return !string.IsNullOrWhiteSpace(uom) ? uom : None;
         }
 
-        /// <summary>
-        /// Gets the unit.
-        /// </summary>
-        /// <param name="uom">The uom.</param>
-        /// <returns>The unit of measure enumeration name.</returns>
-        public static string GetUnit(UnitOfMeasureExt uom)
-        {
-            return uom.IsEnum ? uom.Enum.GetName() : GetUnit(uom.Extension);
-        }
+        ///// <summary>
+        ///// Gets the unit.
+        ///// </summary>
+        ///// <param name="uom">The uom.</param>
+        ///// <returns>The unit of measure enumeration name.</returns>
+        //public static string GetUnit(UnitOfMeasureExt uom)
+        //{
+        //    return uom.IsEnum ? uom.Enum.GetName() : GetUnit(uom.Extension);
+        //}
 
-        /// <summary>
-        /// Gets the unit.
-        /// </summary>
-        /// <param name="uom">The uom.</param>
-        /// <returns>The unit of measure enumeration name.</returns>
-        public static string GetUnit(UnitOfMeasureExt? uom)
-        {
-            return uom.HasValue
-                ? uom.Value.IsEnum ? uom.Value.Enum.GetName() : GetUnit(uom.Value.Extension)
-                : None;
-        }
+        ///// <summary>
+        ///// Gets the unit.
+        ///// </summary>
+        ///// <param name="uom">The uom.</param>
+        ///// <returns>The unit of measure enumeration name.</returns>
+        //public static string GetUnit(UnitOfMeasureExt? uom)
+        //{
+        //    return uom.HasValue
+        //        ? uom.Value.IsEnum ? uom.Value.Enum.GetName() : GetUnit(uom.Value.Extension)
+        //        : None;
+        //}
 
-        /// <summary>
-        /// Gets the enum UnitOfMeasure from a string.
-        /// </summary>
-        /// <param name="uom">The uom.</param>
-        /// <returns>The UnitOfMeasure if not null or empty; value null if otherwise</returns>
-        public static UnitOfMeasureExt? GetUnitOfMeasure(string uom)
-        {
-            if (string.IsNullOrEmpty(uom))
-                return null;
+        ///// <summary>
+        ///// Gets the enum UnitOfMeasure from a string.
+        ///// </summary>
+        ///// <param name="uom">The uom.</param>
+        ///// <returns>The UnitOfMeasure if not null or empty; value null if otherwise</returns>
+        //public static UnitOfMeasureExt? GetUnitOfMeasure(string uom)
+        //{
+        //    if (string.IsNullOrEmpty(uom))
+        //        return null;
             
-            return (UnitOfMeasureExt?)new UnitOfMeasureExt(uom);
-        }
+        //    return (UnitOfMeasureExt?)new UnitOfMeasureExt(uom);
+        //}
     }
 }

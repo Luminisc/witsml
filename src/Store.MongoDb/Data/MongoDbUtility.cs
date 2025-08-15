@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Energistics.DataAccess;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 using MongoDB.Driver;
 using PDS.WITSMLstudio.Framework;
 using Energistics.Etp.Common.Datatypes;
@@ -92,12 +92,12 @@ namespace PDS.WITSMLstudio.Store.Data
                 };
             }
 
-            if (typeof(Witsml200.AbstractObject).IsAssignableFrom(typeof(T)))
-            {
-                return new Dictionary<string, object> {
-                    { "Citation.LastUpdate", DateTime.UtcNow.ToString("o") }
-                };
-            }
+            //if (typeof(Witsml200.AbstractObject).IsAssignableFrom(typeof(T)))
+            //{
+            //    return new Dictionary<string, object> {
+            //        { "Citation.LastUpdate", DateTime.UtcNow.ToString("o") }
+            //    };
+            //}
 
             return new Dictionary<string, object>(0);
         }
@@ -117,12 +117,12 @@ namespace PDS.WITSMLstudio.Store.Data
                 };
             }
 
-            if (typeof(Witsml200.AbstractObject).IsAssignableFrom(typeof(T)))
-            {
-                return new Dictionary<string, object> {
-                    { "GrowingStatus", isGrowing ? Witsml200.ReferenceData.ChannelStatus.active : Witsml200.ReferenceData.ChannelStatus.inactive }
-                };
-            }
+            //if (typeof(Witsml200.AbstractObject).IsAssignableFrom(typeof(T)))
+            //{
+            //    return new Dictionary<string, object> {
+            //        { "GrowingStatus", isGrowing ? Witsml200.ReferenceData.ChannelStatus.active : Witsml200.ReferenceData.ChannelStatus.inactive }
+            //    };
+            //}
 
             return new Dictionary<string, object>(0);
         }
@@ -262,13 +262,13 @@ namespace PDS.WITSMLstudio.Store.Data
                 ((IWellboreObject)copy).UidWellbore = ((IWellboreObject)entity).UidWellbore;
             }
 
-            var obj = entity as Witsml200.AbstractObject;
-            if (obj != null)
-            {
-                var copyObj = copy as Witsml200.AbstractObject;
-                if (copyObj != null)
-                    copyObj.Uuid = obj.Uuid;
-            }
+            //var obj = entity as Witsml200.AbstractObject;
+            //if (obj != null)
+            //{
+            //    var copyObj = copy as Witsml200.AbstractObject;
+            //    if (copyObj != null)
+            //        copyObj.Uuid = obj.Uuid;
+            //}
 
             return copy.ToBsonDocument();
         }

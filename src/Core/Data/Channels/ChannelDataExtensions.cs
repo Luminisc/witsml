@@ -25,7 +25,7 @@ using PDS.WITSMLstudio.Data.Logs;
 using PDS.WITSMLstudio.Framework;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 
 namespace PDS.WITSMLstudio.Data.Channels
 {
@@ -64,21 +64,21 @@ namespace PDS.WITSMLstudio.Data.Channels
         /// </summary>
         /// <param name="channelSet">The channel set.</param>
         /// <returns>true if increasing, false otherwise</returns>
-        public static bool IsIncreasing(this Witsml200.ChannelSet channelSet)
-        {
-            if (channelSet?.Index == null) return true;
-            return channelSet.Index.Select(x => x.IsIncreasing()).FirstOrDefault();
-        }
+        //public static bool IsIncreasing(this Witsml200.ChannelSet channelSet)
+        //{
+        //    if (channelSet?.Index == null) return true;
+        //    return channelSet.Index.Select(x => x.IsIncreasing()).FirstOrDefault();
+        //}
 
         /// <summary>
         /// Determines whether this <see cref="Witsml200.ComponentSchemas.ChannelIndex"/> instance is increasing.
         /// </summary>
         /// <param name="channelIndex">Index of the channel.</param>
         /// <returns>true if increasing, false otherwise.</returns>
-        public static bool IsIncreasing(this Witsml200.ComponentSchemas.ChannelIndex channelIndex)
-        {
-            return channelIndex.Direction.GetValueOrDefault(Witsml200.ReferenceData.IndexDirection.increasing) == Witsml200.ReferenceData.IndexDirection.increasing;
-        }
+        //public static bool IsIncreasing(this Witsml200.ComponentSchemas.ChannelIndex channelIndex)
+        //{
+        //    return channelIndex.Direction.GetValueOrDefault(Witsml200.ReferenceData.IndexDirection.increasing) == Witsml200.ReferenceData.IndexDirection.increasing;
+        //}
 
         /// <summary>
         /// Determines whether this <see cref="Witsml200.ChannelSet"/> instance is a time index.
@@ -86,11 +86,11 @@ namespace PDS.WITSMLstudio.Data.Channels
         /// <param name="channelSet">The channel set.</param>
         /// <param name="includeElapsedTime">if set to <c>true</c> elapsed time is included.</param>
         /// <returns>true if index is time, false otherwise</returns>
-        public static bool IsTimeIndex(this Witsml200.ChannelSet channelSet, bool includeElapsedTime = false)
-        {
-            if (channelSet?.Index == null) return false;
-            return channelSet.Index.Select(x => x.IsTimeIndex(includeElapsedTime)).FirstOrDefault();
-        }
+        //public static bool IsTimeIndex(this Witsml200.ChannelSet channelSet, bool includeElapsedTime = false)
+        //{
+        //    if (channelSet?.Index == null) return false;
+        //    return channelSet.Index.Select(x => x.IsTimeIndex(includeElapsedTime)).FirstOrDefault();
+        //}
 
         /// <summary>
         /// Determines whether this <see cref="Witsml200.ComponentSchemas.ChannelIndex"/> instance is a time index.
@@ -98,11 +98,11 @@ namespace PDS.WITSMLstudio.Data.Channels
         /// <param name="channelIndex">Index of the channel.</param>
         /// <param name="includeElapsedTime">if set to <c>true</c> [include elapsed time].</param>
         /// <returns>true if index is time, false otherwise</returns>
-        public static bool IsTimeIndex(this Witsml200.ComponentSchemas.ChannelIndex channelIndex, bool includeElapsedTime = false)
-        {
-            return channelIndex.IndexType.GetValueOrDefault() == Witsml200.ReferenceData.ChannelIndexType.datetime ||
-                   (channelIndex.IndexType.GetValueOrDefault() == Witsml200.ReferenceData.ChannelIndexType.elapsedtime && includeElapsedTime);
-        }
+        //public static bool IsTimeIndex(this Witsml200.ComponentSchemas.ChannelIndex channelIndex, bool includeElapsedTime = false)
+        //{
+        //    return channelIndex.IndexType.GetValueOrDefault() == Witsml200.ReferenceData.ChannelIndexType.datetime ||
+        //           (channelIndex.IndexType.GetValueOrDefault() == Witsml200.ReferenceData.ChannelIndexType.elapsedtime && includeElapsedTime);
+        //}
 
         /// <summary>
         /// Gets a <see cref="ChannelDataReader" /> for a <see cref="Witsml131.Log" />.
@@ -179,42 +179,42 @@ namespace PDS.WITSMLstudio.Data.Channels
         /// </summary>
         /// <param name="log">The log.</param>
         /// <returns>An <see cref="IEnumerable{ChannelDataReader}"/>.</returns>
-        public static IEnumerable<ChannelDataReader> GetReaders(this Witsml200.Log log)
-        {
-            if (log?.ChannelSet == null) yield break;
+        //public static IEnumerable<ChannelDataReader> GetReaders(this Witsml200.Log log)
+        //{
+        //    if (log?.ChannelSet == null) yield break;
 
-            _log.DebugFormat("Creating ChannelDataReaders for {0}", log.GetType().FullName);
+        //    _log.DebugFormat("Creating ChannelDataReaders for {0}", log.GetType().FullName);
 
-            foreach (var channelSet in log.ChannelSet)
-            {
-                var reader = channelSet.GetReader();
-                if (reader == null) continue;
-                yield return reader;
-            }
-        }
+        //    foreach (var channelSet in log.ChannelSet)
+        //    {
+        //        var reader = channelSet.GetReader();
+        //        if (reader == null) continue;
+        //        yield return reader;
+        //    }
+        //}
 
         /// <summary>
         /// Gets a <see cref="ChannelDataReader"/> for a <see cref="Witsml200.ChannelSet"/> instance.
         /// </summary>
         /// <param name="channelSet">The channel set.</param>
         /// <returns>A <see cref="ChannelDataReader"/> </returns>
-        public static ChannelDataReader GetReader(this Witsml200.ChannelSet channelSet)
-        {
-            var data = Witsml200.Extensions.GetData(channelSet);
-            if (string.IsNullOrWhiteSpace(data)) return null;
+        //public static ChannelDataReader GetReader(this Witsml200.ChannelSet channelSet)
+        //{
+        //    var data = Witsml200.Extensions.GetData(channelSet);
+        //    if (string.IsNullOrWhiteSpace(data)) return null;
 
-            _log.DebugFormat("Creating ChannelDataReader for {0}", channelSet.GetType().FullName);
+        //    _log.DebugFormat("Creating ChannelDataReader for {0}", channelSet.GetType().FullName);
 
-            // Not including index channels with value channels
-            var mnemonics = channelSet.Channel.Select(x => x.Mnemonic).ToArray();
-            var units = channelSet.Channel.Select(x => x.Uom.ToString()).ToArray();
-            var dataTypes = channelSet.Channel.Select(x => x.DataType?.ToString()).ToArray();
-            var nullValues = new string[units.Length];
+        //    // Not including index channels with value channels
+        //    var mnemonics = channelSet.Channel.Select(x => x.Mnemonic).ToArray();
+        //    var units = channelSet.Channel.Select(x => x.Uom.ToString()).ToArray();
+        //    var dataTypes = channelSet.Channel.Select(x => x.DataType?.ToString()).ToArray();
+        //    var nullValues = new string[units.Length];
 
-            return new ChannelDataReader(data, mnemonics, units, dataTypes, nullValues, channelSet.GetUri())
-                // Add index channels to separate collection
-                .WithIndices(channelSet.Index.Select(ToChannelIndexInfo), true);
-        }
+        //    return new ChannelDataReader(data, mnemonics, units, dataTypes, nullValues, channelSet.GetUri())
+        //        // Add index channels to separate collection
+        //        .WithIndices(channelSet.Index.Select(ToChannelIndexInfo), true);
+        //}
 
         /// <summary>
         /// Adds index data to a <see cref="ChannelDataReader"/> instance
@@ -274,16 +274,16 @@ namespace PDS.WITSMLstudio.Data.Channels
         /// </summary>
         /// <param name="channelIndex">Index of the channel.</param>
         /// <returns>A <see cref="ChannelIndexInfo"/> instance.</returns>
-        public static ChannelIndexInfo ToChannelIndexInfo(this Witsml200.ComponentSchemas.ChannelIndex channelIndex)
-        {
-            return new ChannelIndexInfo()
-            {
-                Mnemonic = channelIndex.Mnemonic,
-                Unit = channelIndex.Uom.ToString(),
-                Increasing = channelIndex.IsIncreasing(),
-                IsTimeIndex = channelIndex.IsTimeIndex()
-            };
-        }        
+        //public static ChannelIndexInfo ToChannelIndexInfo(this Witsml200.ComponentSchemas.ChannelIndex channelIndex)
+        //{
+        //    return new ChannelIndexInfo()
+        //    {
+        //        Mnemonic = channelIndex.Mnemonic,
+        //        Unit = channelIndex.Uom.ToString(),
+        //        Increasing = channelIndex.IsIncreasing(),
+        //        IsTimeIndex = channelIndex.IsTimeIndex()
+        //    };
+        //}        
 
         /// <summary>
         /// Adds the channel to a <see cref="ChannelDataBlock"/> instance from a <see cref="Witsml200.ChannelSet"/>.
@@ -291,29 +291,29 @@ namespace PDS.WITSMLstudio.Data.Channels
         /// <param name="dataBlock">The channel data block.</param>
         /// <param name="channelId">Then channel Id.</param>
         /// <param name="channel">The channel.</param>
-        public static void AddChannel(this ChannelDataBlock dataBlock, int channelId, Witsml200.Channel channel)
-        {
-            dataBlock.AddChannel(
-                channelId,
-                channel.Mnemonic,
-                channel.Uom.ToString(),
-                channel.DataType?.ToString());
-        }
+        //public static void AddChannel(this ChannelDataBlock dataBlock, int channelId, Witsml200.Channel channel)
+        //{
+        //    dataBlock.AddChannel(
+        //        channelId,
+        //        channel.Mnemonic,
+        //        channel.Uom.ToString(),
+        //        channel.DataType?.ToString());
+        //}
 
         /// <summary>
         /// Adds the index to a <see cref="ChannelDataBlock"/> instance from a <see cref="Witsml200.ComponentSchemas.ChannelIndex"/>.
         /// </summary>
         /// <param name="dataBlock">The channel data block.</param>
         /// <param name="channelIndex">Index of the channel.</param>
-        public static void AddIndex(this ChannelDataBlock dataBlock, Witsml200.ComponentSchemas.ChannelIndex channelIndex)
-        {
-            dataBlock.AddIndex(
-                channelIndex.Mnemonic,
-                channelIndex.Uom.ToString(),
-                Witsml200.ReferenceData.EtpDataType.@long.ToString(),
-                channelIndex.IsIncreasing(),
-                channelIndex.IsTimeIndex());
-        }
+        //public static void AddIndex(this ChannelDataBlock dataBlock, Witsml200.ComponentSchemas.ChannelIndex channelIndex)
+        //{
+        //    dataBlock.AddIndex(
+        //        channelIndex.Mnemonic,
+        //        channelIndex.Uom.ToString(),
+        //        Witsml200.ReferenceData.EtpDataType.@long.ToString(),
+        //        channelIndex.IsIncreasing(),
+        //        channelIndex.IsTimeIndex());
+        //}
 
         /// <summary>
         /// Validates the row data count.

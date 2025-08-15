@@ -24,9 +24,9 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using Energistics.DataAccess;
 using Energistics.Etp.Common.Datatypes;
-using Witsml200 = Energistics.DataAccess.WITSML200;
-using Prodml200 = Energistics.DataAccess.PRODML200;
-using Resqml210 = Energistics.DataAccess.RESQML210;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Prodml200 = Energistics.DataAccess.PRODML200;
+//using Resqml210 = Energistics.DataAccess.RESQML210;
 using PDS.WITSMLstudio.Framework;
 
 namespace PDS.WITSMLstudio
@@ -159,13 +159,13 @@ namespace PDS.WITSMLstudio
 
         private static Dictionary<Type, string> _elementNameOverrides = new Dictionary<Type, string>
         {
-            { typeof(Witsml200.CuttingsGeology), "CuttingsIntervalSet"},
-            { typeof(Witsml200.CuttingsGeologyInterval), "CuttingsInterval"},
-            { typeof(Witsml200.InterpretedGeology), "InterpretedGeologyIntervalSet"},
-            { typeof(Witsml200.InterpretedGeologyInterval), "GeologicIntervalInterpreted"},
-            { typeof(Witsml200.ComponentSchemas.InterpretedIntervalLithology), "InterpretedLithology"},
-            { typeof(Witsml200.ShowEvaluation), "ShowIntervalSet"},
-            { typeof(Witsml200.ShowEvaluationInterval), "EvaluatedIntervalShow"}
+            //{ typeof(Witsml200.CuttingsGeology), "CuttingsIntervalSet"},
+            //{ typeof(Witsml200.CuttingsGeologyInterval), "CuttingsInterval"},
+            //{ typeof(Witsml200.InterpretedGeology), "InterpretedGeologyIntervalSet"},
+            //{ typeof(Witsml200.InterpretedGeologyInterval), "GeologicIntervalInterpreted"},
+            //{ typeof(Witsml200.ComponentSchemas.InterpretedIntervalLithology), "InterpretedLithology"},
+            //{ typeof(Witsml200.ShowEvaluation), "ShowIntervalSet"},
+            //{ typeof(Witsml200.ShowEvaluationInterval), "EvaluatedIntervalShow"}
         };
 
         /// <summary>
@@ -213,8 +213,9 @@ namespace PDS.WITSMLstudio
         public static bool IsEnergisticsObjectType(Type type)
         {
             return type.Assembly == typeof(IWitsmlDataObject).Assembly
-                   || type.Assembly == typeof(IProdmlDataObject).Assembly
-                   || type.Assembly == typeof(IResqmlDataObject).Assembly;
+                   //|| type.Assembly == typeof(IProdmlDataObject).Assembly
+                   //|| type.Assembly == typeof(IResqmlDataObject).Assembly
+                   ;
         }
 
         /// <summary>
@@ -249,35 +250,35 @@ namespace PDS.WITSMLstudio
             return GetObjectType(dataObject.GetType());
         }
 
-        /// <summary>
-        /// Gets the type of the object.
-        /// </summary>
-        /// <param name="dataObject">The data object.</param>
-        /// <returns>The WITSML data object type, as a string.</returns>
-        public static string GetObjectType(Witsml200.AbstractObject dataObject)
-        {
-            return GetObjectType(dataObject.GetType());
-        }
+        ///// <summary>
+        ///// Gets the type of the object.
+        ///// </summary>
+        ///// <param name="dataObject">The data object.</param>
+        ///// <returns>The WITSML data object type, as a string.</returns>
+        //public static string GetObjectType(Witsml200.AbstractObject dataObject)
+        //{
+        //    return GetObjectType(dataObject.GetType());
+        //}
 
-        /// <summary>
-        /// Gets the type of the object.
-        /// </summary>
-        /// <param name="dataObject">The data object.</param>
-        /// <returns>The WITSML data object type, as a string.</returns>
-        public static string GetObjectType(Prodml200.AbstractObject dataObject)
-        {
-            return GetObjectType(dataObject.GetType());
-        }
+        ///// <summary>
+        ///// Gets the type of the object.
+        ///// </summary>
+        ///// <param name="dataObject">The data object.</param>
+        ///// <returns>The WITSML data object type, as a string.</returns>
+        //public static string GetObjectType(Prodml200.AbstractObject dataObject)
+        //{
+        //    return GetObjectType(dataObject.GetType());
+        //}
 
-        /// <summary>
-        /// Gets the type of the object.
-        /// </summary>
-        /// <param name="dataObject">The data object.</param>
-        /// <returns>The WITSML data object type, as a string.</returns>
-        public static string GetObjectType(Resqml210.AbstractObject dataObject)
-        {
-            return GetObjectType(dataObject.GetType());
-        }
+        ///// <summary>
+        ///// Gets the type of the object.
+        ///// </summary>
+        ///// <param name="dataObject">The data object.</param>
+        ///// <returns>The WITSML data object type, as a string.</returns>
+        //public static string GetObjectType(Resqml210.AbstractObject dataObject)
+        //{
+        //    return GetObjectType(dataObject.GetType());
+        //}
 
         /// <summary>
         /// Gets the type of the data object.
@@ -298,10 +299,12 @@ namespace PDS.WITSMLstudio
         public static string GetObjectType(Type type)
         {
             if (!typeof(IEnergisticsCollection).IsAssignableFrom(type) &&
-                !typeof(IDataObject).IsAssignableFrom(type) &&
-                !typeof(Witsml200.AbstractObject).IsAssignableFrom(type) &&
-                !typeof(Prodml200.AbstractObject).IsAssignableFrom(type) &&
-                !typeof(Resqml210.AbstractObject).IsAssignableFrom(type))
+                !typeof(IDataObject).IsAssignableFrom(type) 
+                //&&
+                //!typeof(Witsml200.AbstractObject).IsAssignableFrom(type) &&
+                //!typeof(Prodml200.AbstractObject).IsAssignableFrom(type) &&
+                //!typeof(Resqml210.AbstractObject).IsAssignableFrom(type)
+                )
             {
                 throw new ArgumentException(@"Invalid WITSML object type, does not implement IEnergisticsCollection, IDataObject or AbstractObject", nameof(type));
             }
@@ -379,10 +382,10 @@ namespace PDS.WITSMLstudio
 
             if (familyUpper == ObjectFamilies.Witsml)
                 assembly = typeof(IWitsmlDataObject).Assembly;
-            else if (familyUpper == ObjectFamilies.Prodml)
-                assembly = typeof(IProdmlDataObject).Assembly;
-            else if (familyUpper == ObjectFamilies.Resqml)
-                assembly = typeof(IResqmlDataObject).Assembly;
+            //else if (familyUpper == ObjectFamilies.Prodml)
+            //    assembly = typeof(IProdmlDataObject).Assembly;
+            //else if (familyUpper == ObjectFamilies.Resqml)
+            //    assembly = typeof(IResqmlDataObject).Assembly;
             else if (familyUpper == ObjectFamilies.Eml)
             {
                 // TODO: Update this once common is implemented independently.

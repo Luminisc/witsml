@@ -25,8 +25,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess.PRODML\DataAccess.PRODML.csproj" />
-    <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess.RESQML\DataAccess.RESQML.csproj" />
     <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess.WITSML\DataAccess.WITSML.csproj" />
     <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\..\ext\etp-devkit\ext\etp.net\src\ETP.Messages\ETP.Messages.csproj" />

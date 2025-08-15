@@ -21,29 +21,11 @@
     <Compile Include="..\External\GlobalAssemblyInfo.cs">
       <Link>GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Update="Data\Activities\Activity200DataProvider.generated.cs">
-      <DependentUpon>Activity200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Activities\Activity200Validator.generated.cs">
-      <DependentUpon>Activity200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\ActivityTemplates\ActivityTemplate200DataProvider.generated.cs">
-      <DependentUpon>ActivityTemplate200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\ActivityTemplates\ActivityTemplate200Validator.generated.cs">
-      <DependentUpon>ActivityTemplate200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\Attachments\Attachment141DataProvider.generated.cs">
       <DependentUpon>Attachment141DataProvider.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\Attachments\Attachment141Validator.generated.cs">
       <DependentUpon>Attachment141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Attachments\Attachment200DataProvider.generated.cs">
-      <DependentUpon>Attachment200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Attachments\Attachment200Validator.generated.cs">
-      <DependentUpon>Attachment200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\BhaRuns\BhaRun131DataProvider.generated.cs">
       <DependentUpon>BhaRun131DataProvider.cs</DependentUpon>
@@ -57,18 +39,6 @@
     <Compile Update="Data\BhaRuns\BhaRun141Validator.generated.cs">
       <DependentUpon>BhaRun141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\BhaRuns\BhaRun200DataProvider.generated.cs">
-      <DependentUpon>BhaRun200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\BhaRuns\BhaRun200Validator.generated.cs">
-      <DependentUpon>BhaRun200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\CementJobEvaluations\CementJobEvaluation200DataProvider.generated.cs">
-      <DependentUpon>CementJobEvaluation200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\CementJobEvaluations\CementJobEvaluation200Validator.generated.cs">
-      <DependentUpon>CementJobEvaluation200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\CementJobs\CementJob131DataProvider.generated.cs">
       <DependentUpon>CementJob131DataProvider.cs</DependentUpon>
     </Compile>
@@ -80,24 +50,6 @@
     </Compile>
     <Compile Update="Data\CementJobs\CementJob141Validator.generated.cs">
       <DependentUpon>CementJob141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\CementJobs\CementJob200DataProvider.generated.cs">
-      <DependentUpon>CementJob200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\CementJobs\CementJob200Validator.generated.cs">
-      <DependentUpon>CementJob200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\ChannelSets\ChannelSet200DataProvider.generated.cs">
-      <DependentUpon>ChannelSet200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\ChannelSets\ChannelSet200Validator.generated.cs">
-      <DependentUpon>ChannelSet200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Channels\Channel200DataProvider.generated.cs">
-      <DependentUpon>Channel200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Channels\Channel200Validator.generated.cs">
-      <DependentUpon>Channel200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\ConvCores\ConvCore131DataProvider.generated.cs">
       <DependentUpon>ConvCore131DataProvider.cs</DependentUpon>
@@ -111,23 +63,11 @@
     <Compile Update="Data\ConvCores\ConvCore141Validator.generated.cs">
       <DependentUpon>ConvCore141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\DataAssuranceRecords\DataAssuranceRecord200DataProvider.generated.cs">
-      <DependentUpon>DataAssuranceRecord200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\DataAssuranceRecords\DataAssuranceRecord200Validator.generated.cs">
-      <DependentUpon>DataAssuranceRecord200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\DepthRegImages\DepthRegImage141DataProvider.generated.cs">
       <DependentUpon>DepthRegImage141DataProvider.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\DepthRegImages\DepthRegImage141Validator.generated.cs">
       <DependentUpon>DepthRegImage141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\DepthRegImages\DepthRegImage200DataProvider.generated.cs">
-      <DependentUpon>DepthRegImage200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\DepthRegImages\DepthRegImage200Validator.generated.cs">
-      <DependentUpon>DepthRegImage200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\DownholeComponents\DownholeComponent141DataProvider.generated.cs">
       <DependentUpon>DownholeComponent141DataProvider.cs</DependentUpon>
@@ -135,23 +75,11 @@
     <Compile Update="Data\DownholeComponents\DownholeComponent141Validator.generated.cs">
       <DependentUpon>DownholeComponent141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\DownholeComponents\DownholeComponent200DataProvider.generated.cs">
-      <DependentUpon>DownholeComponent200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\DownholeComponents\DownholeComponent200Validator.generated.cs">
-      <DependentUpon>DownholeComponent200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\DrillReports\DrillReport141DataProvider.generated.cs">
       <DependentUpon>DrillReport141DataProvider.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\DrillReports\DrillReport141Validator.generated.cs">
       <DependentUpon>DrillReport141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\DrillReports\DrillReport200DataProvider.generated.cs">
-      <DependentUpon>DrillReport200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\DrillReports\DrillReport200Validator.generated.cs">
-      <DependentUpon>DrillReport200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\FluidsReports\FluidsReport131DataProvider.generated.cs">
       <DependentUpon>FluidsReport131DataProvider.cs</DependentUpon>
@@ -164,12 +92,6 @@
     </Compile>
     <Compile Update="Data\FluidsReports\FluidsReport141Validator.generated.cs">
       <DependentUpon>FluidsReport141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\FluidsReports\FluidsReport200DataProvider.generated.cs">
-      <DependentUpon>FluidsReport200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\FluidsReports\FluidsReport200Validator.generated.cs">
-      <DependentUpon>FluidsReport200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\FormationMarkers\FormationMarker131DataProvider.generated.cs">
       <DependentUpon>FormationMarker131DataProvider.cs</DependentUpon>
@@ -195,12 +117,6 @@
     <Compile Update="Data\Logs\Log141Validator.generated.cs">
       <DependentUpon>Log141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\Logs\Log200DataProvider.generated.cs">
-      <DependentUpon>Log200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Logs\Log200Validator.generated.cs">
-      <DependentUpon>Log200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\Messages\Message131DataProvider.generated.cs">
       <DependentUpon>Message131DataProvider.cs</DependentUpon>
     </Compile>
@@ -212,12 +128,6 @@
     </Compile>
     <Compile Update="Data\Messages\Message141Validator.generated.cs">
       <DependentUpon>Message141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\MudLogReports\MudLogReport200DataProvider.generated.cs">
-      <DependentUpon>MudLogReport200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\MudLogReports\MudLogReport200Validator.generated.cs">
-      <DependentUpon>MudLogReport200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\MudLogs\MudLog131DataProvider.generated.cs">
       <DependentUpon>MudLog131DataProvider.cs</DependentUpon>
@@ -243,12 +153,6 @@
     <Compile Update="Data\OpsReports\OpsReport141Validator.generated.cs">
       <DependentUpon>OpsReport141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\OpsReports\OpsReport200DataProvider.generated.cs">
-      <DependentUpon>OpsReport200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\OpsReports\OpsReport200Validator.generated.cs">
-      <DependentUpon>OpsReport200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\Rigs\Rig131DataProvider.generated.cs">
       <DependentUpon>Rig131DataProvider.cs</DependentUpon>
     </Compile>
@@ -260,18 +164,6 @@
     </Compile>
     <Compile Update="Data\Rigs\Rig141Validator.generated.cs">
       <DependentUpon>Rig141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Rigs\Rig200DataProvider.generated.cs">
-      <DependentUpon>Rig200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Rigs\Rig200Validator.generated.cs">
-      <DependentUpon>Rig200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\RigUtilizations\RigUtilization200DataProvider.generated.cs">
-      <DependentUpon>RigUtilization200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\RigUtilizations\RigUtilization200Validator.generated.cs">
-      <DependentUpon>RigUtilization200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\Risks\Risk131DataProvider.generated.cs">
       <DependentUpon>Risk131DataProvider.cs</DependentUpon>
@@ -285,12 +177,6 @@
     <Compile Update="Data\Risks\Risk141Validator.generated.cs">
       <DependentUpon>Risk141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\Risks\Risk200DataProvider.generated.cs">
-      <DependentUpon>Risk200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Risks\Risk200Validator.generated.cs">
-      <DependentUpon>Risk200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\SidewallCores\SidewallCore131DataProvider.generated.cs">
       <DependentUpon>SidewallCore131DataProvider.cs</DependentUpon>
     </Compile>
@@ -303,23 +189,11 @@
     <Compile Update="Data\SidewallCores\SidewallCore141Validator.generated.cs">
       <DependentUpon>SidewallCore141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\StimJobStages\StimJobStage200DataProvider.generated.cs">
-      <DependentUpon>StimJobStage200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\StimJobStages\StimJobStage200Validator.generated.cs">
-      <DependentUpon>StimJobStage200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\StimJobs\StimJob141DataProvider.generated.cs">
       <DependentUpon>StimJob141DataProvider.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\StimJobs\StimJob141Validator.generated.cs">
       <DependentUpon>StimJob141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\StimJobs\StimJob200DataProvider.generated.cs">
-      <DependentUpon>StimJob200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\StimJobs\StimJob200Validator.generated.cs">
-      <DependentUpon>StimJob200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\SurveyPrograms\SurveyProgram131DataProvider.generated.cs">
       <DependentUpon>SurveyProgram131DataProvider.cs</DependentUpon>
@@ -332,12 +206,6 @@
     </Compile>
     <Compile Update="Data\SurveyPrograms\SurveyProgram141Validator.generated.cs">
       <DependentUpon>SurveyProgram141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\SurveyPrograms\SurveyProgram200DataProvider.generated.cs">
-      <DependentUpon>SurveyProgram200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\SurveyPrograms\SurveyProgram200Validator.generated.cs">
-      <DependentUpon>SurveyProgram200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\Targets\Target131DataProvider.generated.cs">
       <DependentUpon>Target131DataProvider.cs</DependentUpon>
@@ -363,12 +231,6 @@
     <Compile Update="Data\Trajectories\Trajectory141Validator.generated.cs">
       <DependentUpon>Trajectory141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\Trajectories\Trajectory200DataProvider.generated.cs">
-      <DependentUpon>Trajectory200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Trajectories\Trajectory200Validator.generated.cs">
-      <DependentUpon>Trajectory200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\Tubulars\Tubular131DataProvider.generated.cs">
       <DependentUpon>Tubular131DataProvider.cs</DependentUpon>
     </Compile>
@@ -380,12 +242,6 @@
     </Compile>
     <Compile Update="Data\Tubulars\Tubular141Validator.generated.cs">
       <DependentUpon>Tubular141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Tubulars\Tubular200DataProvider.generated.cs">
-      <DependentUpon>Tubular200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Tubulars\Tubular200Validator.generated.cs">
-      <DependentUpon>Tubular200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\WbGeometries\WbGeometry131DataProvider.generated.cs">
       <DependentUpon>WbGeometry131DataProvider.cs</DependentUpon>
@@ -405,36 +261,6 @@
     <Compile Update="Data\WellboreCompletions\WellboreCompletion141Validator.generated.cs">
       <DependentUpon>WellboreCompletion141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\WellboreCompletions\WellboreCompletion200DataProvider.generated.cs">
-      <DependentUpon>WellboreCompletion200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreCompletions\WellboreCompletion200Validator.generated.cs">
-      <DependentUpon>WellboreCompletion200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreGeologies\WellboreGeology200DataProvider.generated.cs">
-      <DependentUpon>WellboreGeology200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreGeologies\WellboreGeology200Validator.generated.cs">
-      <DependentUpon>WellboreGeology200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreGeometries\WellboreGeometry200DataProvider.generated.cs">
-      <DependentUpon>WellboreGeometry200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreGeometries\WellboreGeometry200Validator.generated.cs">
-      <DependentUpon>WellboreGeometry200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreMarkerSets\WellboreMarkerSet200DataProvider.generated.cs">
-      <DependentUpon>WellboreMarkerSet200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreMarkerSets\WellboreMarkerSet200Validator.generated.cs">
-      <DependentUpon>WellboreMarkerSet200Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreMarkers\WellboreMarker200DataProvider.generated.cs">
-      <DependentUpon>WellboreMarker200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellboreMarkers\WellboreMarker200Validator.generated.cs">
-      <DependentUpon>WellboreMarker200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\Wellbores\Wellbore131DataProvider.generated.cs">
       <DependentUpon>Wellbore131DataProvider.cs</DependentUpon>
     </Compile>
@@ -447,35 +273,17 @@
     <Compile Update="Data\Wellbores\Wellbore141Validator.generated.cs">
       <DependentUpon>Wellbore141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\Wellbores\Wellbore200DataProvider.generated.cs">
-      <DependentUpon>Wellbore200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Wellbores\Wellbore200Validator.generated.cs">
-      <DependentUpon>Wellbore200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\WellCMLedgers\WellCMLedger141DataProvider.generated.cs">
       <DependentUpon>WellCMLedger141DataProvider.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\WellCMLedgers\WellCMLedger141Validator.generated.cs">
       <DependentUpon>WellCMLedger141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\WellCMLedgers\WellCMLedger200DataProvider.generated.cs">
-      <DependentUpon>WellCMLedger200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellCMLedgers\WellCMLedger200Validator.generated.cs">
-      <DependentUpon>WellCMLedger200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Data\WellCompletions\WellCompletion141DataProvider.generated.cs">
       <DependentUpon>WellCompletion141DataProvider.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\WellCompletions\WellCompletion141Validator.generated.cs">
       <DependentUpon>WellCompletion141Validator.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellCompletions\WellCompletion200DataProvider.generated.cs">
-      <DependentUpon>WellCompletion200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\WellCompletions\WellCompletion200Validator.generated.cs">
-      <DependentUpon>WellCompletion200Validator.cs</DependentUpon>
     </Compile>
     <Compile Update="Data\WellLogs\WellLog131DataProvider.generated.cs">
       <DependentUpon>WellLog131DataProvider.cs</DependentUpon>
@@ -495,12 +303,6 @@
     <Compile Update="Data\Wells\Well141Validator.generated.cs">
       <DependentUpon>Well141Validator.cs</DependentUpon>
     </Compile>
-    <Compile Update="Data\Wells\Well200DataProvider.generated.cs">
-      <DependentUpon>Well200DataProvider.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Data\Wells\Well200Validator.generated.cs">
-      <DependentUpon>Well200Validator.cs</DependentUpon>
-    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -508,8 +310,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess.PRODML\DataAccess.PRODML.csproj" />
-    <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess.RESQML\DataAccess.RESQML.csproj" />
     <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess.WITSML\DataAccess.WITSML.csproj" />
     <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess\DataAccess.csproj" />
     <ProjectReference Include="..\..\ext\etp-devkit\ext\etp.net\src\ETP.Messages\ETP.Messages.csproj" />
@@ -551,6 +351,9 @@
     <Compile Remove="Data\ToolErrorTermSets\ToolErrorTermSet200DataProvider.generated.cs" />
     <Compile Remove="Data\ToolErrorTermSets\ToolErrorTermSet200Validator.cs" />
     <Compile Remove="Data\ToolErrorTermSets\ToolErrorTermSet200Validator.generated.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\ChannelSets\" />
   </ItemGroup>
   <PropertyGroup />
   <PropertyGroup />

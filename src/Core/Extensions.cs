@@ -25,7 +25,7 @@ using System.Web.Services.Protocols;
 using Energistics.DataAccess;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 using PDS.WITSMLstudio.Framework;
 using PDS.WITSMLstudio.Properties;
 
@@ -57,12 +57,12 @@ namespace PDS.WITSMLstudio
         /// <typeparam name="T">The type of data object.</typeparam>
         /// <param name="dataObject">The data object.</param>
         /// <returns>The supplied UUID if not null; otherwise, a generated UID.</returns>
-        public static string NewUuid<T>(this T dataObject) where T : Witsml200.AbstractObject
-        {
-            return string.IsNullOrEmpty(dataObject.Uuid)
-                ? Guid.NewGuid().ToString()
-                : dataObject.Uuid;
-        }
+        //public static string NewUuid<T>(this T dataObject) where T : Witsml200.AbstractObject
+        //{
+        //    return string.IsNullOrEmpty(dataObject.Uuid)
+        //        ? Guid.NewGuid().ToString()
+        //        : dataObject.Uuid;
+        //}
 
         /// <summary>
         /// Gets the description associated with the specified WITSML error code.
@@ -296,10 +296,10 @@ namespace PDS.WITSMLstudio
         /// </summary>
         /// <param name="entity">The entity.</param>
         /// <returns>The last changed date time in microseconds.</returns>
-        public static long GetLastChangedMicroseconds(this Witsml200.AbstractObject entity)
-        {
-            return entity?.Citation?.LastUpdate?.ToUnixTimeMicroseconds() ?? 0;
-        }
+        //public static long GetLastChangedMicroseconds(this Witsml200.AbstractObject entity)
+        //{
+        //    return entity?.Citation?.LastUpdate?.ToUnixTimeMicroseconds() ?? 0;
+        //}
 
         /// <summary>
         /// Gets the non conforming error code.

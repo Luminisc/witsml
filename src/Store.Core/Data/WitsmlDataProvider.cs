@@ -21,7 +21,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using Energistics.DataAccess.WITSML200;
+//using Energistics.DataAccess.WITSML200;
 using Energistics.Etp.Common.Datatypes;
 using Energistics.Etp.Common.Datatypes.Object;
 using log4net;
@@ -438,9 +438,9 @@ namespace PDS.WITSMLstudio.Store.Data
         protected virtual WitsmlQueryParser CreateQueryParser(TObject dataObject)
         {
             var document = WitsmlParser.Parse(WitsmlParser.ToXml(dataObject));
-            var objectType = ObjectTypes.GetObjectType(dataObject as AbstractObject);
+            //var objectType = ObjectTypes.GetObjectType(dataObject as AbstractObject);
 
-            return new WitsmlQueryParser(document.Root, objectType, null);
+            return new WitsmlQueryParser(document.Root, null/*objectType*/, null);
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 
 namespace PDS.WITSMLstudio.Data.Trajectories
 {

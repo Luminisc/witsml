@@ -25,9 +25,9 @@ using Energistics.Etp.Common.Datatypes;
 using PDS.WITSMLstudio.Framework;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
-using Prodml200 = Energistics.DataAccess.PRODML200;
-using Resqml210 = Energistics.DataAccess.RESQML210;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Prodml200 = Energistics.DataAccess.PRODML200;
+//using Resqml210 = Energistics.DataAccess.RESQML210;
 
 namespace PDS.WITSMLstudio
 {
@@ -169,35 +169,35 @@ namespace PDS.WITSMLstudio
             return Witsml141;
         }
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/> entity.
-        /// </summary>
-        /// <param name="entity">The <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/> entity.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUriFamily(this Witsml200.AbstractObject entity)
-        {
-            return GetUriFamily(entity?.GetType());
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/> entity.
+        ///// </summary>
+        ///// <param name="entity">The <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/> entity.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUriFamily(this Witsml200.AbstractObject entity)
+        //{
+        //    return GetUriFamily(entity?.GetType());
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/> entity.
-        /// </summary>
-        /// <param name="entity">The <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/> entity.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUriFamily(this Prodml200.AbstractObject entity)
-        {
-            return GetUriFamily(entity?.GetType());
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/> entity.
+        ///// </summary>
+        ///// <param name="entity">The <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/> entity.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUriFamily(this Prodml200.AbstractObject entity)
+        //{
+        //    return GetUriFamily(entity?.GetType());
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/> entity.
-        /// </summary>
-        /// <param name="entity">The <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/> entity.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUriFamily(this Resqml210.AbstractObject entity)
-        {
-            return GetUriFamily(entity?.GetType());
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/> entity.
+        ///// </summary>
+        ///// <param name="entity">The <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/> entity.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUriFamily(this Resqml210.AbstractObject entity)
+        //{
+        //    return GetUriFamily(entity?.GetType());
+        //}
 
         /// <summary>
         /// Gets the <see cref="EtpUri"/> for a given <see cref="IDataObject"/> entity.
@@ -248,73 +248,73 @@ namespace PDS.WITSMLstudio
                 .Append(ObjectTypes.GetObjectType(entity), entity.Uid, true);
         }
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/>  and parentUri.
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="parentUri">The parent URI.</param>
-        /// <returns>An <see cref="EtpUri"/> instance</returns>
-        public static EtpUri GetUri(this Witsml200.AbstractObject entity, EtpUri parentUri)
-        {
-            // Remove query string parameters, if any
-            var uri = parentUri.GetLeftPart();
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/>  and parentUri.
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="parentUri">The parent URI.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance</returns>
+        //public static EtpUri GetUri(this Witsml200.AbstractObject entity, EtpUri parentUri)
+        //{
+        //    // Remove query string parameters, if any
+        //    var uri = parentUri.GetLeftPart();
 
-            if (!IsRootUri(uri))
-            {
-                // Remove trailing separator
-                uri = uri.TrimEnd('/');
-            }
+        //    if (!IsRootUri(uri))
+        //    {
+        //        // Remove trailing separator
+        //        uri = uri.TrimEnd('/');
+        //    }
 
-            return new EtpUri(uri)
-                .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
-        }
+        //    return new EtpUri(uri)
+        //        .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/>.
-        /// </summary>
-        /// <param name="entity">The <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/> entity.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.AbstractObject entity)
-        {
-            return entity.GetUriFamily()
-                .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/>.
+        ///// </summary>
+        ///// <param name="entity">The <see cref="Energistics.DataAccess.WITSML200.AbstractObject"/> entity.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.AbstractObject entity)
+        //{
+        //    return entity.GetUriFamily()
+        //        .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/>.
-        /// </summary>
-        /// <param name="entity">The <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/> entity.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Prodml200.AbstractObject entity)
-        {
-            return entity.GetUriFamily()
-                .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/>.
+        ///// </summary>
+        ///// <param name="entity">The <see cref="Energistics.DataAccess.PRODML200.AbstractObject"/> entity.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Prodml200.AbstractObject entity)
+        //{
+        //    return entity.GetUriFamily()
+        //        .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/>.
-        /// </summary>
-        /// <param name="entity">The <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/> entity.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Resqml210.AbstractObject entity)
-        {
-            return entity.GetUriFamily()
-                .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/>.
+        ///// </summary>
+        ///// <param name="entity">The <see cref="Energistics.DataAccess.RESQML210.AbstractObject"/> entity.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Resqml210.AbstractObject entity)
+        //{
+        //    return entity.GetUriFamily()
+        //        .Append(ObjectTypes.GetObjectType(entity), entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.DataObjectReference"/>.
-        /// </summary>
-        /// <param name="reference">The data object reference.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.ComponentSchemas.DataObjectReference reference)
-        {
-            var contentType = new EtpContentType(reference.ContentType);
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.DataObjectReference"/>.
+        ///// </summary>
+        ///// <param name="reference">The data object reference.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.ComponentSchemas.DataObjectReference reference)
+        //{
+        //    var contentType = new EtpContentType(reference.ContentType);
 
-            return string.IsNullOrWhiteSpace(reference.Uri)
-                ? Witsml200.Append(contentType.ObjectType, reference.Uuid)
-                : new EtpUri(reference.Uri);
-        }
+        //    return string.IsNullOrWhiteSpace(reference.Uri)
+        //        ? Witsml200.Append(contentType.ObjectType, reference.Uuid)
+        //        : new EtpUri(reference.Uri);
+        //}
 
         /// <summary>
         /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML131.ComponentSchemas.LogCurveInfo"/>.
@@ -340,79 +340,79 @@ namespace PDS.WITSMLstudio
                 .Append(ObjectTypes.LogCurveInfo, entity.Mnemonic.Value, true);
         }
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ChannelSet"/>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="log">The log.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.ChannelSet entity, Witsml200.Log log)
-        {
-            return log.GetUri()
-                .Append(ObjectTypes.ChannelSet, entity.Uuid);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ChannelSet"/>
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="log">The log.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.ChannelSet entity, Witsml200.Log log)
+        //{
+        //    return log.GetUri()
+        //        .Append(ObjectTypes.ChannelSet, entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.Channel"/>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="channelSet">The channel set.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.Channel entity, Witsml200.ChannelSet channelSet)
-        {
-            return channelSet.GetUri()
-                .Append(ObjectTypes.Channel, entity.Uuid);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.Channel"/>
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="channelSet">The channel set.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.Channel entity, Witsml200.ChannelSet channelSet)
+        //{
+        //    return channelSet.GetUri()
+        //        .Append(ObjectTypes.Channel, entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.Channel"/>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="log">The log.</param>
-        /// <param name="channelSet">The channel set.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.Channel entity, Witsml200.Log log, Witsml200.ChannelSet channelSet)
-        {
-            return channelSet.GetUri(log)
-                .Append(ObjectTypes.Channel, entity.Uuid);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.Channel"/>
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="log">The log.</param>
+        ///// <param name="channelSet">The channel set.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.Channel entity, Witsml200.Log log, Witsml200.ChannelSet channelSet)
+        //{
+        //    return channelSet.GetUri(log)
+        //        .Append(ObjectTypes.Channel, entity.Uuid);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.ChannelIndex"/>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="channel">The channel.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.ComponentSchemas.ChannelIndex entity, Witsml200.Channel channel)
-        {
-            return channel.GetUri()
-                .Append(ObjectTypes.ChannelIndex, entity.Mnemonic, true);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.ChannelIndex"/>
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="channel">The channel.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.ComponentSchemas.ChannelIndex entity, Witsml200.Channel channel)
+        //{
+        //    return channel.GetUri()
+        //        .Append(ObjectTypes.ChannelIndex, entity.Mnemonic, true);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.ChannelIndex"/>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="channelSet">The channel set.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.ComponentSchemas.ChannelIndex entity, Witsml200.ChannelSet channelSet)
-        {
-            return channelSet.GetUri()
-                .Append(ObjectTypes.ChannelIndex, entity.Mnemonic, true);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.ChannelIndex"/>
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="channelSet">The channel set.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.ComponentSchemas.ChannelIndex entity, Witsml200.ChannelSet channelSet)
+        //{
+        //    return channelSet.GetUri()
+        //        .Append(ObjectTypes.ChannelIndex, entity.Mnemonic, true);
+        //}
 
-        /// <summary>
-        /// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.ChannelIndex"/>
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <param name="log">The log.</param>
-        /// <param name="channelSet">The channel set.</param>
-        /// <returns>An <see cref="EtpUri"/> instance.</returns>
-        public static EtpUri GetUri(this Witsml200.ComponentSchemas.ChannelIndex entity, Witsml200.Log log, Witsml200.ChannelSet channelSet)
-        {
-            return channelSet.GetUri(log)
-                .Append(ObjectTypes.ChannelIndex, entity.Mnemonic, true);
-        }
+        ///// <summary>
+        ///// Gets the <see cref="EtpUri"/> for a given <see cref="Energistics.DataAccess.WITSML200.ComponentSchemas.ChannelIndex"/>
+        ///// </summary>
+        ///// <param name="entity">The entity.</param>
+        ///// <param name="log">The log.</param>
+        ///// <param name="channelSet">The channel set.</param>
+        ///// <returns>An <see cref="EtpUri"/> instance.</returns>
+        //public static EtpUri GetUri(this Witsml200.ComponentSchemas.ChannelIndex entity, Witsml200.Log log, Witsml200.ChannelSet channelSet)
+        //{
+        //    return channelSet.GetUri(log)
+        //        .Append(ObjectTypes.ChannelIndex, entity.Mnemonic, true);
+        //}
 
         // TODO: Remove this method when the corresponding EtpUriExtension in base submodule has been pushed through        
         /// <summary>

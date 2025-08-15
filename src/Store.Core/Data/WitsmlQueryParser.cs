@@ -22,9 +22,9 @@ using System.Linq;
 using System.Xml.Linq;
 using Energistics.DataAccess;
 using Energistics.Etp.Common.Datatypes;
-using Witsml200 = Energistics.DataAccess.WITSML200;
-using Prodml200 = Energistics.DataAccess.PRODML200;
-using Resqml210 = Energistics.DataAccess.RESQML210;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Prodml200 = Energistics.DataAccess.PRODML200;
+//using Resqml210 = Energistics.DataAccess.RESQML210;
 
 namespace PDS.WITSMLstudio.Store.Data
 {
@@ -204,10 +204,10 @@ namespace PDS.WITSMLstudio.Store.Data
             var objectType = ObjectTypes.GetObjectType(type);
             var baseUri = EtpUris.GetUriFamily(type);
 
-            if (typeof(Witsml200.AbstractObject).IsAssignableFrom(type) ||
-                typeof(Prodml200.AbstractObject).IsAssignableFrom(type) ||
-                typeof(Resqml210.AbstractObject).IsAssignableFrom(type))
-                return baseUri.Append(objectType, Attribute("uuid"));
+            //if (typeof(Witsml200.AbstractObject).IsAssignableFrom(type) ||
+            //    typeof(Prodml200.AbstractObject).IsAssignableFrom(type) ||
+            //    typeof(Resqml210.AbstractObject).IsAssignableFrom(type))
+            //    return baseUri.Append(objectType, Attribute("uuid"));
 
             if (typeof(IWellObject).IsAssignableFrom(type))
                 baseUri = baseUri.Append(ObjectTypes.Well, Attribute("uidWell"), true);

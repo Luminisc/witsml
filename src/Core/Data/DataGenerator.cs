@@ -18,7 +18,7 @@
 
 using System;
 using System.Collections.Generic;
-using Energistics.DataAccess.WITSML200.ComponentSchemas;
+//using Energistics.DataAccess.WITSML200.ComponentSchemas;
 
 namespace PDS.WITSMLstudio.Data
 {
@@ -70,15 +70,15 @@ namespace PDS.WITSMLstudio.Data
         /// </summary>
         /// <param name="curveClass">The curve class.</param>
         /// <returns>A new <see cref="DataObjectReference"/> instance.</returns>
-        public DataObjectReference ToPropertyKindReference(string curveClass)
-        {
-            return new DataObjectReference
-            {
-                ContentType = "application/x-eml+xml;version=2.1;type=PropertyKind",
-                Uuid = Uid(),
-                Title = curveClass,
-            };
-        }
+        //public DataObjectReference ToPropertyKindReference(string curveClass)
+        //{
+        //    return new DataObjectReference
+        //    {
+        //        ContentType = "application/x-eml+xml;version=2.1;type=PropertyKind",
+        //        Uuid = Uid(),
+        //        Title = curveClass,
+        //    };
+        //}
 
         /// <summary>
         /// Generates the specified date time indexes starting at the given start index and using the specified interval.

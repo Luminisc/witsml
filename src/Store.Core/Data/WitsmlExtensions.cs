@@ -26,12 +26,12 @@ using PDS.WITSMLstudio.Framework;
 using PDS.WITSMLstudio.Store.Configuration;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 using Witsml131Schemas = Energistics.DataAccess.WITSML131.ComponentSchemas;
 using Witsml141Schemas = Energistics.DataAccess.WITSML141.ComponentSchemas;
-using Witsml200Schemas = Energistics.DataAccess.WITSML200.ComponentSchemas;
-using Prodml200Schemas = Energistics.DataAccess.PRODML200.ComponentSchemas;
-using Resqml210Schemas = Energistics.DataAccess.RESQML210.ComponentSchemas;
+//using Witsml200Schemas = Energistics.DataAccess.WITSML200.ComponentSchemas;
+//using Prodml200Schemas = Energistics.DataAccess.PRODML200.ComponentSchemas;
+//using Resqml210Schemas = Energistics.DataAccess.RESQML210.ComponentSchemas;
 
 namespace PDS.WITSMLstudio.Store.Data
 {
@@ -186,83 +186,83 @@ namespace PDS.WITSMLstudio.Store.Data
             return commonData;
         }
 
-        /// <summary>
-        /// Updates the Creation and LastUpdate properties in the citation.
-        /// </summary>
-        /// <param name="citation">The citation.</param>
-        /// <returns>The instance of the citation.</returns>
-        public static Witsml200Schemas.Citation Create(this Witsml200Schemas.Citation citation)
-        {
-            if (citation == null)
-                citation = new Witsml200Schemas.Citation();
+        ///// <summary>
+        ///// Updates the Creation and LastUpdate properties in the citation.
+        ///// </summary>
+        ///// <param name="citation">The citation.</param>
+        ///// <returns>The instance of the citation.</returns>
+        //public static Witsml200Schemas.Citation Create(this Witsml200Schemas.Citation citation)
+        //{
+        //    if (citation == null)
+        //        citation = new Witsml200Schemas.Citation();
 
-            citation.Creation = DateTime.UtcNow;
-            citation.LastUpdate = DateTime.UtcNow;
-            citation.Originator = WitsmlOperationContext.Current.User;
-            citation.Format = typeof(WitsmlExtensions).Assembly.FullName;
+        //    citation.Creation = DateTime.UtcNow;
+        //    citation.LastUpdate = DateTime.UtcNow;
+        //    citation.Originator = WitsmlOperationContext.Current.User;
+        //    citation.Format = typeof(WitsmlExtensions).Assembly.FullName;
 
-            return citation;
-        }
+        //    return citation;
+        //}
 
-        /// <summary>
-        /// Updates the Creation and LastUpdate properties in the citation.
-        /// </summary>
-        /// <param name="citation">The citation.</param>
-        /// <returns>The instance of the citation.</returns>
-        public static Prodml200Schemas.Citation Create(this Prodml200Schemas.Citation citation)
-        {
-            if (citation == null)
-                citation = new Prodml200Schemas.Citation();
+        ///// <summary>
+        ///// Updates the Creation and LastUpdate properties in the citation.
+        ///// </summary>
+        ///// <param name="citation">The citation.</param>
+        ///// <returns>The instance of the citation.</returns>
+        //public static Prodml200Schemas.Citation Create(this Prodml200Schemas.Citation citation)
+        //{
+        //    if (citation == null)
+        //        citation = new Prodml200Schemas.Citation();
 
-            citation.Creation = DateTime.UtcNow;
-            citation.LastUpdate = DateTime.UtcNow;
-            citation.Originator = WitsmlOperationContext.Current.User;
-            citation.Format = typeof(WitsmlExtensions).Assembly.FullName;
+        //    citation.Creation = DateTime.UtcNow;
+        //    citation.LastUpdate = DateTime.UtcNow;
+        //    citation.Originator = WitsmlOperationContext.Current.User;
+        //    citation.Format = typeof(WitsmlExtensions).Assembly.FullName;
 
-            return citation;
-        }
+        //    return citation;
+        //}
 
-        /// <summary>
-        /// Updates the Creation and LastUpdate properties in the citation.
-        /// </summary>
-        /// <param name="citation">The citation.</param>
-        /// <returns>The instance of the citation.</returns>
-        public static Resqml210Schemas.Citation Create(this Resqml210Schemas.Citation citation)
-        {
-            if (citation == null)
-                citation = new Resqml210Schemas.Citation();
+        ///// <summary>
+        ///// Updates the Creation and LastUpdate properties in the citation.
+        ///// </summary>
+        ///// <param name="citation">The citation.</param>
+        ///// <returns>The instance of the citation.</returns>
+        //public static Resqml210Schemas.Citation Create(this Resqml210Schemas.Citation citation)
+        //{
+        //    if (citation == null)
+        //        citation = new Resqml210Schemas.Citation();
 
-            citation.Creation = DateTime.UtcNow;
-            citation.LastUpdate = DateTime.UtcNow;
-            citation.Originator = WitsmlOperationContext.Current.User;
-            citation.Format = typeof(WitsmlExtensions).Assembly.FullName;
+        //    citation.Creation = DateTime.UtcNow;
+        //    citation.LastUpdate = DateTime.UtcNow;
+        //    citation.Originator = WitsmlOperationContext.Current.User;
+        //    citation.Format = typeof(WitsmlExtensions).Assembly.FullName;
 
-            return citation;
-        }
+        //    return citation;
+        //}
 
-        /// <summary>
-        /// Creates a <see cref="Witsml200Schemas.DataObjectReference" /> for the specified URI.
-        /// </summary>
-        /// <typeparam name="TObject">The data object type.</typeparam>
-        /// <param name="reference">The data object reference.</param>
-        /// <param name="uri">The URI.</param>
-        /// <returns>A <see cref="Witsml200Schemas.DataObjectReference" /> instance.</returns>
-        public static Witsml200Schemas.DataObjectReference Create<TObject>(this Witsml200Schemas.DataObjectReference reference, EtpUri uri) where TObject : Witsml200.AbstractObject, new()
-        {
-            if (reference != null) return reference;
+        ///// <summary>
+        ///// Creates a <see cref="Witsml200Schemas.DataObjectReference" /> for the specified URI.
+        ///// </summary>
+        ///// <typeparam name="TObject">The data object type.</typeparam>
+        ///// <param name="reference">The data object reference.</param>
+        ///// <param name="uri">The URI.</param>
+        ///// <returns>A <see cref="Witsml200Schemas.DataObjectReference" /> instance.</returns>
+        //public static Witsml200Schemas.DataObjectReference Create<TObject>(this Witsml200Schemas.DataObjectReference reference, EtpUri uri) where TObject : Witsml200.AbstractObject, new()
+        //{
+        //    if (reference != null) return reference;
 
-            var objectType = ObjectTypes.GetObjectType<TObject>();
+        //    var objectType = ObjectTypes.GetObjectType<TObject>();
 
-            if (!objectType.EqualsIgnoreCase(uri.ObjectType))
-                uri = new TObject().GetUri();
+        //    if (!objectType.EqualsIgnoreCase(uri.ObjectType))
+        //        uri = new TObject().GetUri();
 
-            return new Witsml200Schemas.DataObjectReference
-            {
-                ContentType = uri.ContentType,
-                Uuid = uri.ObjectId ?? Guid.Empty.ToString(),
-                Title = uri.ObjectId ?? ObjectTypes.Unknown
-            };
-        }
+        //    return new Witsml200Schemas.DataObjectReference
+        //    {
+        //        ContentType = uri.ContentType,
+        //        Uuid = uri.ObjectId ?? Guid.Empty.ToString(),
+        //        Title = uri.ObjectId ?? ObjectTypes.Unknown
+        //    };
+        //}
 
         /// <summary>
         /// Determines whether the list has duplicate UIDs.

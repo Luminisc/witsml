@@ -23,7 +23,7 @@ using System.Reflection;
 using System.Xml.Serialization;
 using Energistics.DataAccess;
 using Witsml141 = Energistics.DataAccess.WITSML141;
-using Witsml200 = Energistics.DataAccess.WITSML200;
+//using Witsml200 = Energistics.DataAccess.WITSML200;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using PDS.WITSMLstudio.Framework;
@@ -52,7 +52,7 @@ namespace PDS.WITSMLstudio.Store.Data
 
             Register3<Witsml141.ChangeLog>();
 
-            RegisterId<Witsml200.ComponentSchemas.ChannelIndex>("Mnemonic");
+            //RegisterId<Witsml200.ComponentSchemas.ChannelIndex>("Mnemonic");
             RegisterId<Witsml141.ComponentSchemas.LithostratigraphyStruct>("Kind");
             RegisterId<Witsml141.ComponentSchemas.ChronostratigraphyStruct>("Kind");
 
@@ -64,11 +64,11 @@ namespace PDS.WITSMLstudio.Store.Data
 
             Register(new TimestampSerializer());
             Register(new XmlElementSerializer());
-            Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.UnitOfMeasure>());
-            Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.LithologyKind>());
-            Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.LithologyQualifierKind>());
-            Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.EquipmentType>());
-            Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.QuantityClassKind>());
+            //Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.UnitOfMeasure>());
+            //Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.LithologyKind>());
+            //Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.LithologyQualifierKind>());
+            //Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.EquipmentType>());
+            //Register(new ExtensibleEnumSerializer<Witsml200.ReferenceData.QuantityClassKind>());
         }
 
         /// <summary>
@@ -94,13 +94,13 @@ namespace PDS.WITSMLstudio.Store.Data
 
         private void RegisterDerivedTypes()
         {
-            var type = typeof(Witsml200.ComponentSchemas.ProjectedWellLocation);
+            //var type = typeof(Witsml200.ComponentSchemas.ProjectedWellLocation);
 
-            type.Assembly
-                .GetTypes()
-                .Where(t => t.Namespace == type.Namespace && !t.IsAbstract && t.GetCustomAttributes<XmlIncludeAttribute>().Any())
-                .SelectMany(t => t.GetCustomAttributes<XmlIncludeAttribute>())
-                .ForEach(a => Register2(a.Type, true));
+            //type.Assembly
+            //    .GetTypes()
+            //    .Where(t => t.Namespace == type.Namespace && !t.IsAbstract && t.GetCustomAttributes<XmlIncludeAttribute>().Any())
+            //    .SelectMany(t => t.GetCustomAttributes<XmlIncludeAttribute>())
+            //    .ForEach(a => Register2(a.Type, true));
         }
         
         private void Register<T>() where T : IDataObject
@@ -116,16 +116,16 @@ namespace PDS.WITSMLstudio.Store.Data
             }
         }
 
-        private void Register2<T>() where T : Witsml200.AbstractObject
+        private void Register2<T>() // where T : Witsml200.AbstractObject
         {
-            if (!BsonClassMap.IsClassMapRegistered(typeof(T).BaseType))
-            {
-                BsonClassMap.RegisterClassMap<Witsml200.AbstractObject>(cm =>
-                {
-                    cm.AutoMap();
-                    cm.SetIgnoreExtraElements(true);
-                });
-            }
+            //if (!BsonClassMap.IsClassMapRegistered(typeof(T).BaseType))
+            //{
+            //    BsonClassMap.RegisterClassMap<Witsml200.AbstractObject>(cm =>
+            //    {
+            //        cm.AutoMap();
+            //        cm.SetIgnoreExtraElements(true);
+            //    });
+            //}
 
             Register3<T>();
         }

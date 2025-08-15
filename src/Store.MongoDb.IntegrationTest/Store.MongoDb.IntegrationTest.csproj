@@ -40,7 +40,6 @@
     <ProjectReference Include="..\Framework\Framework.csproj" />
     <ProjectReference Include="..\Store.IntegrationTest\Store.IntegrationTest.csproj" />
     <ProjectReference Include="..\Store.Core\Store.Core.csproj" />
-    <ProjectReference Include="..\Core.UnitTest\Core.UnitTest.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Store.MongoDb.Common\Store.MongoDb.Common.csproj" />
     <ProjectReference Include="..\Store.MongoDb\Store.MongoDb.csproj" />

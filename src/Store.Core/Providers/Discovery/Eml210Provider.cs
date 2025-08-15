@@ -19,7 +19,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using Energistics.DataAccess.WITSML200;
+//using Energistics.DataAccess.WITSML200;
 using Energistics.Etp.Common;
 using Energistics.Etp.Common.Datatypes;
 using Energistics.Etp.Common.Datatypes.Object;
@@ -140,10 +140,10 @@ namespace PDS.WITSMLstudio.Store.Providers.Discovery
                 var dataProvider = GetDataProvider(etpUri.ObjectType);
                 serverSortOrder = dataProvider.ServerSortOrder;
 
-                dataProvider
-                    .GetAll(parentUri)
-                    .Cast<AbstractObject>()
-                    .ForEach(x => resources.Add(ToResource(etpAdapter, x, parentUri, hasChildren)));
+                //dataProvider
+                //    .GetAll(parentUri)
+                //    .Cast<AbstractObject>()
+                //    .ForEach(x => resources.Add(ToResource(etpAdapter, x, parentUri, hasChildren)));
             }
             //else
             //{
@@ -218,15 +218,15 @@ namespace PDS.WITSMLstudio.Store.Providers.Discovery
             return _container.Resolve<IEtpDataProvider>(new ObjectName(objectType, ObjectFamilies.Witsml, DataSchemaVersion)); // TODO: Update this when EML is handled separately.
         }
 
-        private IResource ToResource(IEtpAdapter etpAdapter, AbstractObject entity, EtpUri parentUri, int hasChildren = -1)
-        {
-            return etpAdapter.CreateResource(
-                uuid: entity.Uuid,
-                uri: entity.GetUri(parentUri),
-                resourceType: ResourceTypes.DataObject,
-                name: entity.Citation.Title,
-                count: hasChildren,
-                lastChanged: entity.GetLastChangedMicroseconds());
-        }
+        //private IResource ToResource(IEtpAdapter etpAdapter, AbstractObject entity, EtpUri parentUri, int hasChildren = -1)
+        //{
+        //    return etpAdapter.CreateResource(
+        //        uuid: entity.Uuid,
+        //        uri: entity.GetUri(parentUri),
+        //        resourceType: ResourceTypes.DataObject,
+        //        name: entity.Citation.Title,
+        //        count: hasChildren,
+        //        lastChanged: entity.GetLastChangedMicroseconds());
+        //}
     }
 }
