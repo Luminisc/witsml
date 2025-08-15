@@ -29,8 +29,8 @@ using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Xml.Serialization;
-using Microsoft.VisualBasic.FileIO;
 using PDS.WITSMLstudio.Framework.Properties;
+using TextFieldParserStandard;
 
 namespace PDS.WITSMLstudio.Framework
 {

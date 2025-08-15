@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>PDS.WITSMLstudio.Framework</RootNamespace>
     <AssemblyName>PDS.WITSMLstudio.Framework</AssemblyName>
@@ -15,7 +15,12 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Security" />
+    <PackageReference Include="log4net" Version="3.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
+    <PackageReference Include="System.Reflection.Context" Version="9.0.8" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="9.0.8" />
+    <PackageReference Include="TextFieldParserStandard" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\External\GlobalAssemblyInfo.cs">
@@ -37,15 +42,6 @@
     <ProjectReference Include="..\..\ext\devkit-c\source\DevKitGenerator\DataAccess\DataAccess.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="log4net" Version="3.1.0" />
-    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="System.ComponentModel.Composition" Version="9.0.7" />
-    <PackageReference Include="System.ComponentModel.Composition.Registration" Version="9.0.7" />
-    <PackageReference Include="System.Reflection.Context" Version="9.0.7" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="EntityValidator.cs" />
   </ItemGroup>
-  <PropertyGroup />
 </Project>
