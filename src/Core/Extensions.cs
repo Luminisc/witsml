@@ -21,7 +21,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
-using System.Web.Services.Protocols;
 using Energistics.DataAccess;
 using Witsml131 = Energistics.DataAccess.WITSML131;
 using Witsml141 = Energistics.DataAccess.WITSML141;
@@ -104,14 +103,14 @@ namespace PDS.WITSMLstudio
         /// <param name="proxy">The SOAP client proxy.</param>
         /// <param name="userAgent">The user agent.</param>
         /// <returns>The <see cref="SoapHttpClientProtocol"/> instance.</returns>
-        public static SoapHttpClientProtocol WithUserAgent(this SoapHttpClientProtocol proxy, string userAgent = null)
-        {
-            if (proxy == null) return null;
+        //public static SoapHttpClientProtocol WithUserAgent(this SoapHttpClientProtocol proxy, string userAgent = null)
+        //{
+        //    if (proxy == null) return null;
 
-            proxy.UserAgent = userAgent ?? _defaulWmlstUserAgent;
+        //    proxy.UserAgent = userAgent ?? _defaulWmlstUserAgent;
 
-            return proxy;
-        }
+        //    return proxy;
+        //}
 
         /// <summary>
         /// Builds an emtpy WITSML query for the specified data object type and data schema version.

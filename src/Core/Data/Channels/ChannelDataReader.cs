@@ -26,10 +26,10 @@ using System.Linq;
 using System.Text;
 using Energistics.DataAccess.Validation;
 using log4net;
-using Microsoft.VisualBasic.FileIO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PDS.WITSMLstudio.Framework;
+using TextFieldParserStandard;
 
 namespace PDS.WITSMLstudio.Data.Channels
 {
