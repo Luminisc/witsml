@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.ServiceModel.Web;
+using CoreWCF;
 using Energistics.DataAccess;
 using log4net;
 using PDS.WITSMLstudio.Framework;
@@ -87,7 +87,7 @@ namespace PDS.WITSMLstudio.Store
                 WitsmlOperationContext.Current.Request = request.ToContext();
                 EnsureCapServerProviders();
 
-                _log.Debug(WebOperationContext.Current.ToLogMessage());
+                _log.Debug(OperationContext.Current.ToLogMessage());
                 _log.Debug(request.ToLogMessage());
 
                 UserAuthorizationProvider.CheckSoapAccess();
@@ -116,7 +116,7 @@ namespace PDS.WITSMLstudio.Store
                 WitsmlOperationContext.Current.Request = request.ToContext();
                 EnsureCapServerProviders();
 
-                _log.Debug(WebOperationContext.Current.ToLogMessage());
+                _log.Debug(OperationContext.Current.ToLogMessage());
                 _log.Debug(request.ToLogMessage());
 
                 UserAuthorizationProvider.CheckSoapAccess();
@@ -161,7 +161,7 @@ namespace PDS.WITSMLstudio.Store
 
             try
             {
-                _log.Debug(WebOperationContext.Current.ToLogMessage());
+                _log.Debug(OperationContext.Current.ToLogMessage());
                 _log.Debug(context);
 
                 UserAuthorizationProvider.CheckSoapAccess();
@@ -210,7 +210,7 @@ namespace PDS.WITSMLstudio.Store
 
             try
             {
-                _log.Debug(WebOperationContext.Current.ToLogMessage());
+                _log.Debug(OperationContext.Current.ToLogMessage());
                 _log.Debug(context);
 
                 UserAuthorizationProvider.CheckSoapAccess();
@@ -255,7 +255,7 @@ namespace PDS.WITSMLstudio.Store
 
             try
             {
-                _log.Debug(WebOperationContext.Current.ToLogMessage());
+                _log.Debug(OperationContext.Current.ToLogMessage());
                 _log.Debug(context);
 
                 UserAuthorizationProvider.CheckSoapAccess();
@@ -300,7 +300,7 @@ namespace PDS.WITSMLstudio.Store
 
             try
             {
-                _log.Debug(WebOperationContext.Current.ToLogMessage());
+                _log.Debug(OperationContext.Current.ToLogMessage());
                 _log.Debug(context);
 
                 UserAuthorizationProvider.CheckSoapAccess();
@@ -340,7 +340,7 @@ namespace PDS.WITSMLstudio.Store
         public WMLS_GetBaseMsgResponse WMLS_GetBaseMsg(WMLS_GetBaseMsgRequest request)
         {
             WitsmlOperationContext.Current.Request = request.ToContext();
-            _log.Debug(WebOperationContext.Current.ToLogMessage());
+            _log.Debug(OperationContext.Current.ToLogMessage());
 
             UserAuthorizationProvider.CheckSoapAccess();
             string message;

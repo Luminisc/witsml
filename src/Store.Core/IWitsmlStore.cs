@@ -14,7 +14,7 @@ namespace PDS.WITSMLstudio.Store
     /// Generated WitsmlStore service interface
     /// </summary>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.witsml.org/wsdl/120", ConfigurationName="PDS.WITSMLstudio.Store.IWitsmlStore")]
+    [CoreWCF.ServiceContractAttribute(Namespace="http://www.witsml.org/wsdl/120", ConfigurationName="PDS.WITSMLstudio.Store.IWitsmlStore")]
     public interface IWitsmlStore
     {
         /// <summary>
@@ -23,8 +23,8 @@ namespace PDS.WITSMLstudio.Store
         /// <param name="request">The request object encapsulating the method input parameters.</param>
         /// <returns>A positive value indicates a success; a negative value indicates an error.</returns>   
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_AddToStore")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_AddToStore")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_AddToStoreResponse WMLS_AddToStore(PDS.WITSMLstudio.Store.WMLS_AddToStoreRequest request);
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace PDS.WITSMLstudio.Store
         /// <param name="request">he request object encapsulating the method input parameters.</param>
         /// <returns>A positive value indicates a success; a negative value indicates an error.</returns>
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_DeleteFromStore")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_DeleteFromStore")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_DeleteFromStoreResponse WMLS_DeleteFromStore(PDS.WITSMLstudio.Store.WMLS_DeleteFromStoreRequest request);
 
         /// <summary>
@@ -43,8 +43,8 @@ namespace PDS.WITSMLstudio.Store
         /// <param name="request">The request object encapsulating the method input parameters.</param>
         /// <returns>The fixed descriptive message text associated with the Return Value.</returns>
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.witsml.org/message/120) of message WMLS_GetBaseMsgRequest does not match the default value (http://www.witsml.org/wsdl/120)
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetBaseMsg")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetBaseMsg")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_GetBaseMsgResponse WMLS_GetBaseMsg(PDS.WITSMLstudio.Store.WMLS_GetBaseMsgRequest request);
 
         /// <summary>
@@ -53,8 +53,8 @@ namespace PDS.WITSMLstudio.Store
         /// <param name="request">The request object encapsulating the method input parameters.</param>
         /// <returns>A positive value indicates a success; a negative value indicates an error.</returns>
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetCap")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetCap")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_GetCapResponse WMLS_GetCap(PDS.WITSMLstudio.Store.WMLS_GetCapRequest request);
 
         /// <summary>
@@ -65,8 +65,8 @@ namespace PDS.WITSMLstudio.Store
         /// A positive value indicating success along with one or more WITSML data-objects from the server, or a negative value indicating an error.
         /// </returns>
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetFromStore")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetFromStore")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_GetFromStoreResponse WMLS_GetFromStore(PDS.WITSMLstudio.Store.WMLS_GetFromStoreRequest request);
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace PDS.WITSMLstudio.Store
         /// <param name="request">The request object encapsulating the method input parameters.</param>
         /// <returns>A comma-separated list of Data Schema Versions (without spaces) that the server supports.</returns>
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.witsml.org/message/120) of message WMLS_GetVersionRequest does not match the default value (http://www.witsml.org/wsdl/120)
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetVersion")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_GetVersion")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_GetVersionResponse WMLS_GetVersion(PDS.WITSMLstudio.Store.WMLS_GetVersionRequest request);
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace PDS.WITSMLstudio.Store
         /// <param name="request">he request object encapsulating the method input parameters.</param>
         /// <returns>A positive value indicates a success; a negative value indicates an error.</returns>
         // CODEGEN: Generating message contract since the operation has multiple return values.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_UpdateInStore")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(Style=System.ServiceModel.OperationFormatStyle.Rpc, Use=System.ServiceModel.OperationFormatUse.Encoded)]
+        [CoreWCF.OperationContractAttribute(Action="http://www.witsml.org/action/120/Store.WMLS_UpdateInStore")]
+        [CoreWCF.XmlSerializerFormatAttribute(Style=CoreWCF.OperationFormatStyle.Rpc, Use=CoreWCF.OperationFormatUse.Encoded)]
         PDS.WITSMLstudio.Store.WMLS_UpdateInStoreResponse WMLS_UpdateInStore(PDS.WITSMLstudio.Store.WMLS_UpdateInStoreRequest request);
     }
 
@@ -95,31 +95,31 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_AddToStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_AddToStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_AddToStoreRequest
     {
         /// <summary>
         /// The Witsml type
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string WMLtypeIn;
 
         /// <summary>
         /// The XML input
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string XMLin;
 
         /// <summary>
         /// The options in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=2)]
         public string OptionsIn;
 
         /// <summary>
         /// The capabilities in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=3)]
         public string CapabilitiesIn;
 
         /// <summary>
@@ -150,20 +150,20 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_AddToStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_AddToStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_AddToStoreResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public short Result;
 
         /// <summary>
         /// The supplemental message
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string SuppMsgOut;
 
         /// <summary>
@@ -190,31 +190,31 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_DeleteFromStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_DeleteFromStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_DeleteFromStoreRequest
     {
         /// <summary>
         /// The Witsml type
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string WMLtypeIn;
 
         /// <summary>
         /// The query in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string QueryIn;
 
         /// <summary>
         /// The options in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=2)]
         public string OptionsIn;
 
         /// <summary>
         /// The capabilities in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=3)]
         public string CapabilitiesIn;
 
         /// <summary>
@@ -245,20 +245,20 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_DeleteFromStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_DeleteFromStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_DeleteFromStoreResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public short Result;
 
         /// <summary>
         /// The supplemental message
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string SuppMsgOut;
 
         /// <summary>
@@ -286,14 +286,14 @@ namespace PDS.WITSMLstudio.Store
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetBaseMsg", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetBaseMsg", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetBaseMsgRequest
     {
 
         /// <summary>
         /// The return value in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public short ReturnValueIn;
 
         /// <summary>
@@ -319,14 +319,14 @@ namespace PDS.WITSMLstudio.Store
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetBaseMsgResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetBaseMsgResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetBaseMsgResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string Result;
 
         /// <summary>
@@ -351,14 +351,14 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetCap", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetCap", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetCapRequest
     {
 
         /// <summary>
         /// The options in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string OptionsIn;
 
         /// <summary>
@@ -383,26 +383,26 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetCapResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetCapResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetCapResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public short Result;
 
         /// <summary>
         /// The capabilities out
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string CapabilitiesOut;
 
         /// <summary>
         /// The supplemental message
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=2)]
         public string SuppMsgOut;
 
         /// <summary>
@@ -431,32 +431,32 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetFromStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetFromStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetFromStoreRequest
     {
 
         /// <summary>
         /// The Witsml type
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string WMLtypeIn;
 
         /// <summary>
         /// The query in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string QueryIn;
 
         /// <summary>
         /// The options in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=2)]
         public string OptionsIn;
 
         /// <summary>
         /// The capabilities in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=3)]
         public string CapabilitiesIn;
 
         /// <summary>
@@ -487,26 +487,26 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetFromStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetFromStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetFromStoreResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public short Result;
 
         /// <summary>
         /// The XML output
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string XMLout;
 
         /// <summary>
         /// The supplemental message
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=2)]
         public string SuppMsgOut;
 
         /// <summary>
@@ -536,7 +536,7 @@ namespace PDS.WITSMLstudio.Store
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetVersion", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetVersion", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetVersionRequest
     {
 
@@ -554,14 +554,14 @@ namespace PDS.WITSMLstudio.Store
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_GetVersionResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_GetVersionResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_GetVersionResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string Result;
 
         /// <summary>
@@ -586,32 +586,32 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_UpdateInStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_UpdateInStore", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_UpdateInStoreRequest
     {
 
         /// <summary>
         /// The Witsml type
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public string WMLtypeIn;
 
         /// <summary>
         /// The XML input
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string XMLin;
 
         /// <summary>
         /// The options in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=2)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=2)]
         public string OptionsIn;
 
         /// <summary>
         /// The capabilities in
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=3)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=3)]
         public string CapabilitiesIn;
 
         /// <summary>
@@ -642,20 +642,20 @@ namespace PDS.WITSMLstudio.Store
     /// </summary>
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="WMLS_UpdateInStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
+    [CoreWCF.MessageContractAttribute(WrapperName="WMLS_UpdateInStoreResponse", WrapperNamespace="http://www.witsml.org/message/120", IsWrapped=true)]
     public partial class WMLS_UpdateInStoreResponse
     {
 
         /// <summary>
         /// The result
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=0)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=0)]
         public short Result;
 
         /// <summary>
         /// The supplemental message
         /// </summary>
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="", Order=1)]
+        [CoreWCF.MessageBodyMemberAttribute(Namespace="", Order=1)]
         public string SuppMsgOut;
 
         /// <summary>

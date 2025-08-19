@@ -17,7 +17,8 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.ServiceModel.Web;
+using CoreWCF;
+using CoreWCF.Channels;
 using log4net;
 using PDS.WITSMLstudio.Store.Configuration;
 
@@ -36,17 +37,19 @@ namespace PDS.WITSMLstudio.Store.Logging
         /// <param name="context">The web operation context.</param>
         /// <param name="isEnabled">if set to <c>true</c> the message is created.</param>
         /// <returns>The string representation of the request.</returns>
-        public static string ToLogMessage(this WebOperationContext context, bool isEnabled = false)
+        public static string ToLogMessage(this OperationContext context, bool isEnabled = false)
         {
-            if (context?.IncomingRequest == null)
+            if (context?.IncomingMessageProperties == null)
                 return string.Empty;
 
             if (!_log.IsDebugEnabled && !isEnabled)
                 return string.Empty;
 
+            var responseProp = OperationContext.Current.IncomingMessageProperties[HttpResponseMessageProperty.Name] as HttpResponseMessageProperty;
+
             return string.Format(
                 "UserAgent: {0}",
-                context.IncomingRequest.UserAgent);
+                responseProp.Headers["User-Agent"].ToString());
         }
 
         /// <summary>

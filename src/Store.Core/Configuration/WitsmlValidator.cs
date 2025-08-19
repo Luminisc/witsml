@@ -20,8 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.ServiceModel.Web;
 using System.Xml.Linq;
+using CoreWCF;
+using CoreWCF.Channels;
 using Energistics.DataAccess;
 using Energistics.DataAccess.Validation;
 using log4net;
@@ -46,7 +47,7 @@ namespace PDS.WITSMLstudio.Store.Configuration
             var context = WitsmlOperationContext.Current;
             _log.DebugFormat("Validating WITSML request for {0}", context.Request.ObjectType);
 
-            ValidateUserAgent(WebOperationContext.Current);
+            ValidateUserAgent(OperationContext.Current);
 
             context.OptionsIn = OptionsIn.Parse(context.Request.Options);
 
@@ -101,11 +102,13 @@ namespace PDS.WITSMLstudio.Store.Configuration
         /// </summary>
         /// <param name="context">The web operation context.</param>
         /// <exception cref="WitsmlException">Thrown if the User-Agent header is missing.</exception>
-        public static void ValidateUserAgent(WebOperationContext context)
+        public static void ValidateUserAgent(OperationContext context)
         {
-            _log.DebugFormat("Validating user agent: {0}", context?.IncomingRequest?.UserAgent);
+            var responseProp = OperationContext.Current?.IncomingMessageProperties[HttpResponseMessageProperty.Name] as HttpResponseMessageProperty;
 
-            if (context?.IncomingRequest != null && string.IsNullOrWhiteSpace(context.IncomingRequest.UserAgent))
+            _log.DebugFormat("Validating user agent: {0}", responseProp?.Headers["User-Agent"]);
+
+            if (context?.IncomingMessageProperties != null && string.IsNullOrWhiteSpace(responseProp.Headers["User-Agent"].ToString()))
             {
                 throw new WitsmlException(ErrorCodes.MissingClientUserAgent);
             }
